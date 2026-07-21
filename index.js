@@ -46,9 +46,11 @@ try {
     reply.callNotFound()
   })
 
-  await app.listen({ port }, () => {
-    console.log(`App listening on port ${port}`)
-  })
+  await app.listen({
+  port,
+  host: '0.0.0.0',  
+}, () => console.log(`App listening on port ${port}`))
+
 
 }
 catch (e) {
