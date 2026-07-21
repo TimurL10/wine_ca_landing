@@ -19,7 +19,7 @@ try {
     console.log('onRequest url:', req.raw.url)
     done()
   })
-  const port = 3000
+  const port = Number(process.env.PORT) || 3000
 
   // Подключаем pug через плагин
   await app.register(view, { engine: { pug } })
