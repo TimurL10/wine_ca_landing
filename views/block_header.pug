@@ -1,0 +1,45 @@
+.container.my-4(style="max-width:990px;")
+  .row.g-3.align-items-stretch
+    // левая колонка
+    .col-lg-7.d-flex.flex-column.gap-3
+      img.img-fluid.rounded-3(src="/images/left.svg" alt="Left photo")
+
+      .p-3.rounded-3.text-center.d-flex.flex-column.justify-content-center.flex-fill(
+        style="background:#fde6ed; color:#d81b90;"
+      )
+        h1.mb-3(
+          style="font-style:italic; font-size:clamp(1.65rem,3vw,2.6rem);"
+        ) Винное&nbsp;казино
+
+        p.mb-2(style="font-size:1.3rem;")
+          | Увлекательная игра-дегустация
+
+        span.badge.bg-white.text-dark(
+          style="font-size:1rem; padding:8px 12px;"
+        ) 18+
+
+    // правая колонка
+    .col-lg-5
+      img.w-100.h-100.object-fit-cover.rounded-3(
+        src="/images/right.svg"
+        alt="Right photo"
+      )
+
+  // меню
+  .d-flex.flex-wrap.gap-2.mt-3
+    each item in ['Цены','Еда','Напитки','Игры и активности','Дополнительные услуги','Где проводим','Галерея']
+      if item === 'Цены'
+        a(
+          href="#prices"
+          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
+        )= item
+      if item === 'Игры и активности'
+        a(
+          href="#games"
+          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
+        )= item
+      else
+        a(
+          href="#"
+          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
+        )= item
