@@ -1,0 +1,208 @@
+/* Actions */
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 46px);
+  margin-top: 42px;
+}
+
+/* Билет */
+
+.ticket-button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(220px, 1fr);
+  min-height: 78px;
+  overflow: hidden;
+  color: var(--color-paper-light);
+  background: var(--color-ink);
+  transition:
+    color 240ms ease,
+    background-color 240ms ease,
+    transform 240ms ease;
+}
+
+.ticket-button::before,
+.ticket-button::after {
+  position: absolute;
+  left: 72px;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  content: "";
+  background: var(--color-paper);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.ticket-button::before {
+  top: -9px;
+}
+
+.ticket-button::after {
+  bottom: -9px;
+}
+
+.ticket-button__side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-right: 1px dashed rgba(255, 255, 255, 0.38);
+}
+
+.ticket-button__number {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.ticket-button__caption {
+  margin-top: 3px;
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+
+.ticket-button__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 24px;
+}
+
+.ticket-button__label {
+  max-width: 170px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.ticket-button__arrow {
+  font-size: 1.45rem;
+  transition: transform 240ms ease;
+}
+
+.ticket-button:hover {
+  color: #fff;
+  background: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.ticket-button:hover .ticket-button__arrow {
+  transform: translate(4px, -4px);
+}
+
+/* Круглая вращающаяся кнопка */
+
+.circle-button {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  width: 116px;
+  height: 116px;
+  place-items: center;
+  border: 1px solid rgba(23, 21, 19, 0.4);
+  border-radius: 50%;
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    transform 250ms ease;
+}
+
+.circle-button::before {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  content: "";
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: scale(0);
+  transition: transform 280ms ease;
+}
+
+.circle-button__text {
+  position: absolute;
+  inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  overflow: visible;
+  animation: circle-rotation 16s linear infinite;
+}
+
+.circle-button__text text {
+  fill: currentColor;
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+}
+
+.circle-button__icon {
+  position: relative;
+  z-index: 2;
+  font-size: 1.35rem;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.circle-button:hover {
+  color: #fff;
+  border-color: var(--color-accent);
+  transform: rotate(-6deg);
+}
+
+.circle-button:hover::before {
+  transform: scale(1);
+}
+
+.circle-button:hover .circle-button__icon {
+  color: #fff;
+  transform: translateY(4px);
+}
+
+@keyframes circle-rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circle-button__text {
+    animation: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  .hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ticket-button {
+    width: 100%;
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .ticket-button::before,
+  .ticket-button::after {
+    left: 64px;
+  }
+
+  .circle-button {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+  }
+}

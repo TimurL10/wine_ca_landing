@@ -1,45 +1,516 @@
-.container.my-4(style="max-width:990px;")
-  .row.g-3.align-items-stretch
-    // левая колонка
-    .col-lg-7.d-flex.flex-column.gap-3
-      img.img-fluid.rounded-3(src="/images/left.svg" alt="Left photo")
+style.
+  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Manrope:wght@400;500;600&display=swap");
 
-      .p-3.rounded-3.text-center.d-flex.flex-column.justify-content-center.flex-fill(
-        style="background:#fde6ed; color:#d81b90;"
-      )
-        h1.mb-3(
-          style="font-style:italic; font-size:clamp(1.65rem,3vw,2.6rem);"
-        ) Винное&nbsp;казино
+  :root {
+    --kv-paper: #eee5d7;
+    --kv-paper-light: #f8f2e9;
+    --kv-paper-dark: #d8c9b5;
+    --kv-ink: #1d1916;
+    --kv-muted: #766c62;
+    --kv-wine: #713d43;
+    --kv-wine-dark: #51282d;
+    --kv-line: rgba(29, 25, 22, 0.22);
+    --kv-display: "Cormorant Garamond", Georgia, serif;
+    --kv-main: "Manrope", Arial, sans-serif;
+  }
 
-        p.mb-2(style="font-size:1.3rem;")
-          | Увлекательная игра-дегустация
+  .kv-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(30px, 6vw, 72px) 0;
+    color: var(--kv-ink);
+    background:
+      radial-gradient(
+        circle at 14% 18%,
+        rgba(113, 61, 67, 0.12),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 88% 80%,
+        rgba(116, 91, 66, 0.12),
+        transparent 28%
+      ),
+      var(--kv-paper);
+    font-family: var(--kv-main);
+  }
 
-        span.badge.bg-white.text-dark(
-          style="font-size:1rem; padding:8px 12px;"
-        ) 18+
+  .kv-hero::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    opacity: 0.13;
+    background-image:
+      repeating-radial-gradient(
+        circle at 20% 30%,
+        rgba(45, 35, 28, 0.18) 0,
+        rgba(45, 35, 28, 0.18) 0.7px,
+        transparent 0.8px,
+        transparent 4px
+      );
+    mix-blend-mode: multiply;
+  }
 
-    // правая колонка
-    .col-lg-5
-      img.w-100.h-100.object-fit-cover.rounded-3(
-        src="/images/right.svg"
-        alt="Right photo"
-      )
+  .kv-hero__container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding-inline: 22px;
+  }
 
-  // меню
-  .d-flex.flex-wrap.gap-2.mt-3
-    each item in ['Цены','Еда','Напитки','Игры и активности','Дополнительные услуги','Где проводим','Галерея']
-      if item === 'Цены'
-        a(
-          href="#prices"
-          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
-        )= item
-      if item === 'Игры и активности'
-        a(
-          href="#games"
-          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
-        )= item
-      else
-        a(
-          href="#"
-          style="background:#d81b90; color:#fff; padding:8px 14px; border-radius:14px; text-decoration:none; font-size:1.05rem;"
+  .kv-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    color: var(--kv-muted);
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .kv-hero__eyebrow::before {
+    width: 50px;
+    height: 1px;
+    content: "";
+    background: var(--kv-wine);
+  }
+
+  .kv-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 74px);
+  }
+
+  .kv-collage {
+    position: relative;
+    min-height: 620px;
+  }
+
+  .kv-photo {
+    position: absolute;
+    margin: 0;
+    padding: 12px 12px 48px;
+    background: var(--kv-paper-light);
+    box-shadow:
+      0 24px 55px rgba(48, 35, 28, 0.2),
+      0 5px 14px rgba(48, 35, 28, 0.12);
+    transition:
+      transform 450ms cubic-bezier(.2, .8, .2, 1),
+      box-shadow 450ms ease;
+  }
+
+  .kv-photo::before {
+    position: absolute;
+    right: 0;
+    bottom: -11px;
+    left: 0;
+    height: 24px;
+    content: "";
+    background: var(--kv-paper-light);
+    clip-path: polygon(
+      0 0,
+      4% 45%,
+      8% 10%,
+      13% 58%,
+      18% 18%,
+      24% 64%,
+      30% 20%,
+      36% 73%,
+      42% 25%,
+      49% 62%,
+      55% 13%,
+      62% 70%,
+      68% 22%,
+      74% 60%,
+      80% 14%,
+      87% 68%,
+      93% 25%,
+      100% 52%,
+      100% 0
+    );
+  }
+
+  .kv-photo::after {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 108px;
+    height: 30px;
+    content: "";
+    background: rgba(224, 208, 178, 0.73);
+    box-shadow: 0 2px 5px rgba(50, 38, 30, 0.08);
+    transform: translateX(-50%) rotate(-2deg);
+    backdrop-filter: blur(1px);
+  }
+
+  .kv-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter:
+      sepia(0.23)
+      saturate(0.75)
+      contrast(1.04);
+  }
+
+  .kv-photo figcaption {
+    position: absolute;
+    right: 18px;
+    bottom: 13px;
+    left: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--kv-muted);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .kv-photo--main {
+    top: 18px;
+    left: 0;
+    z-index: 2;
+    width: 74%;
+    height: 410px;
+    transform: rotate(-3.2deg);
+  }
+
+  .kv-photo--side {
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 52%;
+    height: 355px;
+    transform: rotate(4deg);
+  }
+
+  .kv-photo:hover {
+    z-index: 5;
+    box-shadow:
+      0 32px 70px rgba(48, 35, 28, 0.25),
+      0 8px 18px rgba(48, 35, 28, 0.14);
+  }
+
+  .kv-photo--main:hover {
+    transform: rotate(-1.5deg) translateY(-8px);
+  }
+
+  .kv-photo--side:hover {
+    transform: rotate(2deg) translateY(-8px);
+  }
+
+  .kv-note {
+    position: absolute;
+    top: 420px;
+    left: 12%;
+    z-index: 4;
+    max-width: 220px;
+    padding: 18px 22px;
+    color: var(--kv-paper-light);
+    background: var(--kv-wine);
+    font-family: var(--kv-display);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.35;
+    transform: rotate(-2deg);
+    box-shadow: 0 15px 35px rgba(81, 40, 45, 0.2);
+  }
+
+  .kv-note::after {
+    position: absolute;
+    right: 20px;
+    bottom: -13px;
+    width: 26px;
+    height: 26px;
+    content: "";
+    background: var(--kv-wine);
+    transform: rotate(45deg);
+  }
+
+  .kv-content {
+    position: relative;
+    padding: clamp(24px, 4vw, 50px) 0;
+  }
+
+  .kv-content__number {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--kv-wine);
+    font-family: var(--kv-display);
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  .kv-title {
+    margin: 0;
+    font-family: var(--kv-display);
+    font-size: clamp(4rem, 8vw, 7.6rem);
+    font-weight: 400;
+    line-height: 0.75;
+    letter-spacing: -0.055em;
+  }
+
+  .kv-title span {
+    display: block;
+    margin-top: 24px;
+    margin-left: 20%;
+    color: var(--kv-wine);
+    font-size: 0.34em;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .kv-description {
+    max-width: 390px;
+    margin: 38px 0 0;
+    color: #49413b;
+    font-family: var(--kv-display);
+    font-size: clamp(1.15rem, 2vw, 1.42rem);
+    line-height: 1.55;
+  }
+
+  .kv-description strong {
+    color: var(--kv-wine-dark);
+    font-weight: 500;
+  }
+
+  .kv-age {
+    display: inline-grid;
+    width: 64px;
+    height: 64px;
+    margin-top: 28px;
+    place-items: center;
+    border: 1px solid var(--kv-ink);
+    border-radius: 50%;
+    font-family: var(--kv-display);
+    font-size: 1.25rem;
+    font-style: italic;
+    transform: rotate(7deg);
+  }
+
+  .kv-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 46px;
+    padding-top: 24px;
+    border-top: 1px solid var(--kv-line);
+  }
+
+  .kv-menu__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 43px;
+    padding: 8px 17px;
+    overflow: hidden;
+    border: 1px solid var(--kv-line);
+    border-radius: 0;
+    color: var(--kv-ink);
+    background: rgba(248, 242, 233, 0.4);
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    transition:
+      color 220ms ease,
+      border-color 220ms ease,
+      transform 220ms ease;
+  }
+
+  .kv-menu__link::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: var(--kv-wine);
+    transform: translateY(102%);
+    transition: transform 260ms cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .kv-menu__link:hover {
+    color: #fff;
+    border-color: var(--kv-wine);
+    transform: translateY(-3px);
+  }
+
+  .kv-menu__link:hover::before {
+    transform: translateY(0);
+  }
+
+  .kv-menu__link--accent {
+    color: var(--kv-paper-light);
+    border-color: var(--kv-wine);
+    background: var(--kv-wine);
+  }
+
+  .kv-menu__link--accent::after {
+    margin-left: 13px;
+    content: "↗";
+    font-size: 1rem;
+    transition: transform 220ms ease;
+  }
+
+  .kv-menu__link--accent:hover::after {
+    transform: translate(3px, -3px);
+  }
+
+  @media (max-width: 900px) {
+    .kv-hero__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .kv-content {
+      grid-row: 1;
+      max-width: 650px;
+    }
+
+    .kv-collage {
+      grid-row: 2;
+      min-height: 610px;
+    }
+
+    .kv-title {
+      font-size: clamp(4rem, 14vw, 7rem);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .kv-hero {
+      padding-top: 28px;
+    }
+
+    .kv-hero__container {
+      padding-inline: 17px;
+    }
+
+    .kv-content {
+      padding-bottom: 8px;
+    }
+
+    .kv-title {
+      font-size: clamp(3.65rem, 19vw, 5.5rem);
+    }
+
+    .kv-title span {
+      margin-left: 8%;
+    }
+
+    .kv-collage {
+      min-height: 550px;
+      margin-top: 20px;
+    }
+
+    .kv-photo {
+      padding: 8px 8px 42px;
+    }
+
+    .kv-photo--main {
+      width: 88%;
+      height: 335px;
+    }
+
+    .kv-photo--side {
+      width: 65%;
+      height: 300px;
+    }
+
+    .kv-note {
+      top: 345px;
+      left: 2%;
+      max-width: 185px;
+      padding: 15px 18px;
+      font-size: 0.95rem;
+    }
+
+    .kv-menu {
+      gap: 8px;
+      margin-top: 30px;
+    }
+
+    .kv-menu__link {
+      min-height: 40px;
+      padding: 7px 13px;
+      font-size: 0.63rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kv-photo,
+    .kv-menu__link,
+    .kv-menu__link::before {
+      transition: none;
+    }
+  }
+
+
+section.kv-hero#home
+  .kv-hero__container
+
+    .kv-hero__eyebrow
+      | Живой звук · Москва · камерные встречи
+
+    .kv-hero__layout
+
+      .kv-collage
+        figure.kv-photo.kv-photo--main
+          img(
+            src="/images/Image Jul 21, 2026, 06_42_29 PM.png"
+            alt="Атмосфера камерного концерта"
+          )
+
+          figcaption
+            span 01
+            span Музыка совсем рядом
+
+        figure.kv-photo.kv-photo--side
+          img(
+            src="/images/Image Jul 21, 2026, 04_20_18 PM.png"
+            alt="Уютное пространство квартирника"
+          )
+
+          figcaption
+            span 02
+            span До пятидесяти гостей
+
+        .kv-note
+          | Не концертный зал.
+          br
+          | Вечер среди своих.
+
+      .kv-content
+        span.kv-content__number 01 / Квартирники
+
+        h1.kv-title
+          | Квартирники
+          span ближе к музыке
+
+        p.kv-description
+          | Камерные концерты в уютных лофтах и студиях,
+          | где между музыкантами и зрителями
+          strong  нет расстояния.
+
+        span.kv-age 18+
+
+    nav.kv-menu(aria-label="Навигация по странице")
+      each item in ['Цены', 'Еда', 'Напитки', 'Игры и активности', 'Дополнительные услуги', 'Где проводим', 'Галерея']
+        -
+          const links = {
+            'Цены': '#prices',
+            'Еда': '#food',
+            'Напитки': '#drinks',
+            'Игры и активности': '#games',
+            'Дополнительные услуги': '#services',
+            'Где проводим': '#places',
+            'Галерея': '#gallery'
+          }
+
+        a.kv-menu__link(
+          href=links[item]
+          class=item === 'Цены' ? 'kv-menu__link--accent' : ''
         )= item
