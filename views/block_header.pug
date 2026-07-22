@@ -4,7 +4,6 @@ style.
   :root {
     --kv-paper: #eee5d7;
     --kv-paper-light: #f8f2e9;
-    --kv-paper-dark: #d8c9b5;
     --kv-ink: #1d1916;
     --kv-muted: #766c62;
     --kv-wine: #713d43;
@@ -12,6 +11,10 @@ style.
     --kv-line: rgba(29, 25, 22, 0.22);
     --kv-display: "Cormorant Garamond", Georgia, serif;
     --kv-main: "Manrope", Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   .kv-hero {
@@ -54,16 +57,15 @@ style.
   .kv-hero__container {
     position: relative;
     z-index: 2;
-    max-width: 1100px;
+    width: min(calc(100% - 44px), 1120px);
     margin-inline: auto;
-    padding-inline: 22px;
   }
 
   .kv-hero__eyebrow {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     color: var(--kv-muted);
     font-size: 0.68rem;
     letter-spacing: 0.22em;
@@ -79,14 +81,18 @@ style.
 
   .kv-hero__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(300px, 0.85fr);
     align-items: center;
-    gap: clamp(28px, 5vw, 74px);
+    gap: clamp(30px, 5vw, 74px);
   }
+
+  /* Коллаж */
 
   .kv-collage {
     position: relative;
-    min-height: 620px;
+    min-height: 690px;
   }
 
   .kv-photo {
@@ -100,50 +106,6 @@ style.
     transition:
       transform 450ms cubic-bezier(.2, .8, .2, 1),
       box-shadow 450ms ease;
-  }
-
-  .kv-photo::before {
-    position: absolute;
-    right: 0;
-    bottom: -11px;
-    left: 0;
-    height: 24px;
-    content: "";
-    background: var(--kv-paper-light);
-    clip-path: polygon(
-      0 0,
-      4% 45%,
-      8% 10%,
-      13% 58%,
-      18% 18%,
-      24% 64%,
-      30% 20%,
-      36% 73%,
-      42% 25%,
-      49% 62%,
-      55% 13%,
-      62% 70%,
-      68% 22%,
-      74% 60%,
-      80% 14%,
-      87% 68%,
-      93% 25%,
-      100% 52%,
-      100% 0
-    );
-  }
-
-  .kv-photo::after {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    width: 108px;
-    height: 30px;
-    content: "";
-    background: rgba(224, 208, 178, 0.73);
-    box-shadow: 0 2px 5px rgba(50, 38, 30, 0.08);
-    transform: translateX(-50%) rotate(-2deg);
-    backdrop-filter: blur(1px);
   }
 
   .kv-photo img {
@@ -166,31 +128,186 @@ style.
     justify-content: space-between;
     gap: 12px;
     color: var(--kv-muted);
-    font-size: 0.62rem;
+    font-size: 0.61rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
   }
 
+  /* Нижний рваный край у первых двух фото */
+
+  .kv-photo:not(.kv-photo--torn)::before {
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+    left: 0;
+    height: 25px;
+    content: "";
+    background: var(--kv-paper-light);
+    clip-path: polygon(
+      0 0,
+      3% 45%,
+      7% 12%,
+      11% 62%,
+      16% 18%,
+      21% 68%,
+      26% 21%,
+      31% 72%,
+      37% 26%,
+      42% 65%,
+      48% 13%,
+      54% 71%,
+      60% 23%,
+      66% 66%,
+      72% 15%,
+      78% 73%,
+      84% 24%,
+      90% 64%,
+      95% 17%,
+      100% 55%,
+      100% 0
+    );
+  }
+
+  /* Полупрозрачный скотч */
+
+  .kv-photo:not(.kv-photo--torn)::after {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 108px;
+    height: 30px;
+    content: "";
+    background: rgba(224, 208, 178, 0.74);
+    box-shadow: 0 2px 5px rgba(50, 38, 30, 0.08);
+    transform: translateX(-50%) rotate(-2deg);
+    backdrop-filter: blur(1px);
+  }
+
+  /* Первая фотография */
+
   .kv-photo--main {
-    top: 18px;
+    top: 24px;
     left: 0;
     z-index: 2;
-    width: 74%;
-    height: 410px;
+    width: 72%;
+    height: 405px;
     transform: rotate(-3.2deg);
   }
+
+  .kv-photo--main img {
+    object-position: center;
+  }
+
+  /* Вторая фотография */
 
   .kv-photo--side {
     right: 0;
     bottom: 0;
     z-index: 3;
-    width: 52%;
-    height: 355px;
+    width: 49%;
+    height: 345px;
     transform: rotate(4deg);
   }
 
+  .kv-photo--side img {
+    object-position: center;
+  }
+
+  /* Третья фотография — оторванный фрагмент */
+
+  .kv-photo--torn {
+    top: 330px;
+    left: 18%;
+    z-index: 4;
+    width: 44%;
+    height: 285px;
+    padding: 13px 13px 45px;
+    background: var(--kv-paper-light);
+
+    clip-path: polygon(
+      2% 3%,
+      7% 1%,
+      12% 3.5%,
+      17% 1%,
+      23% 3%,
+      29% 0.5%,
+      35% 3.5%,
+      41% 1%,
+      47% 3%,
+      53% 0.5%,
+      59% 3%,
+      65% 1%,
+      71% 3.5%,
+      77% 0.5%,
+      83% 3%,
+      89% 1%,
+      95% 3.5%,
+      99% 1%,
+
+      98% 8%,
+      100% 15%,
+      97.5% 22%,
+      99.5% 29%,
+      97% 36%,
+      100% 43%,
+      97.5% 50%,
+      99.5% 57%,
+      97% 64%,
+      100% 71%,
+      97.5% 78%,
+      99.5% 85%,
+      97% 92%,
+      99% 98%,
+
+      93% 97%,
+      87% 100%,
+      81% 97%,
+      75% 99.5%,
+      69% 97%,
+      63% 100%,
+      57% 97%,
+      51% 99.5%,
+      45% 97%,
+      39% 100%,
+      33% 97%,
+      27% 99.5%,
+      21% 97%,
+      15% 100%,
+      9% 97%,
+      2% 99%,
+
+      3% 92%,
+      0.5% 85%,
+      3% 78%,
+      0% 71%,
+      2.5% 64%,
+      0.5% 57%,
+      3% 50%,
+      0% 43%,
+      2.5% 36%,
+      0.5% 29%,
+      3% 22%,
+      0% 15%,
+      2.5% 8%
+    );
+
+    transform: rotate(-6deg);
+    filter:
+      drop-shadow(0 22px 22px rgba(48, 35, 28, 0.23))
+      drop-shadow(0 5px 5px rgba(48, 35, 28, 0.12));
+  }
+
+  .kv-photo--torn img {
+    object-position: center;
+    filter:
+      sepia(0.34)
+      saturate(0.7)
+      contrast(1.08)
+      brightness(0.94);
+  }
+
   .kv-photo:hover {
-    z-index: 5;
+    z-index: 8;
     box-shadow:
       0 32px 70px rgba(48, 35, 28, 0.25),
       0 8px 18px rgba(48, 35, 28, 0.14);
@@ -204,33 +321,44 @@ style.
     transform: rotate(2deg) translateY(-8px);
   }
 
+  .kv-photo--torn:hover {
+    transform:
+      rotate(-3deg)
+      translateY(-9px)
+      scale(1.02);
+  }
+
+  /* Записка */
+
   .kv-note {
     position: absolute;
-    top: 420px;
-    left: 12%;
-    z-index: 4;
-    max-width: 220px;
-    padding: 18px 22px;
+    right: 4%;
+    top: 285px;
+    z-index: 6;
+    max-width: 205px;
+    padding: 18px 21px;
     color: var(--kv-paper-light);
     background: var(--kv-wine);
     font-family: var(--kv-display);
-    font-size: 1.05rem;
+    font-size: 1.04rem;
     font-style: italic;
     line-height: 1.35;
-    transform: rotate(-2deg);
-    box-shadow: 0 15px 35px rgba(81, 40, 45, 0.2);
+    transform: rotate(2.5deg);
+    box-shadow: 0 15px 35px rgba(81, 40, 45, 0.22);
   }
 
   .kv-note::after {
     position: absolute;
-    right: 20px;
-    bottom: -13px;
-    width: 26px;
-    height: 26px;
+    right: 24px;
+    bottom: -12px;
+    width: 25px;
+    height: 25px;
     content: "";
     background: var(--kv-wine);
     transform: rotate(45deg);
   }
+
+  /* Текстовая часть */
 
   .kv-content {
     position: relative;
@@ -294,6 +422,8 @@ style.
     transform: rotate(7deg);
   }
 
+  /* Навигация */
+
   .kv-menu {
     display: flex;
     flex-wrap: wrap;
@@ -305,17 +435,18 @@ style.
 
   .kv-menu__link {
     position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     min-height: 43px;
     padding: 8px 17px;
     overflow: hidden;
     border: 1px solid var(--kv-line);
-    border-radius: 0;
     color: var(--kv-ink);
     background: rgba(248, 242, 233, 0.4);
     font-size: 0.72rem;
     letter-spacing: 0.09em;
+    text-decoration: none;
     text-transform: uppercase;
     transition:
       color 220ms ease,
@@ -360,6 +491,8 @@ style.
     transform: translate(3px, -3px);
   }
 
+  /* Планшет */
+
   @media (max-width: 900px) {
     .kv-hero__layout {
       grid-template-columns: 1fr;
@@ -372,7 +505,7 @@ style.
 
     .kv-collage {
       grid-row: 2;
-      min-height: 610px;
+      min-height: 720px;
     }
 
     .kv-title {
@@ -380,13 +513,15 @@ style.
     }
   }
 
+  /* Телефон */
+
   @media (max-width: 600px) {
     .kv-hero {
       padding-top: 28px;
     }
 
     .kv-hero__container {
-      padding-inline: 17px;
+      width: min(calc(100% - 34px), 1120px);
     }
 
     .kv-content {
@@ -402,8 +537,8 @@ style.
     }
 
     .kv-collage {
-      min-height: 550px;
-      margin-top: 20px;
+      min-height: 750px;
+      margin-top: 24px;
     }
 
     .kv-photo {
@@ -411,21 +546,39 @@ style.
     }
 
     .kv-photo--main {
-      width: 88%;
+      top: 15px;
+      width: 89%;
       height: 335px;
     }
 
     .kv-photo--side {
+      right: 0;
+      bottom: 48px;
+      width: 64%;
+      height: 290px;
+    }
+
+    .kv-photo--torn {
+      top: 360px;
+      left: 1%;
       width: 65%;
-      height: 300px;
+      height: 270px;
+      padding: 9px 9px 40px;
+      transform: rotate(-4deg);
+    }
+
+    .kv-photo--torn:hover {
+      transform:
+        rotate(-2deg)
+        translateY(-5px);
     }
 
     .kv-note {
-      top: 345px;
-      left: 2%;
-      max-width: 185px;
-      padding: 15px 18px;
-      font-size: 0.95rem;
+      top: 300px;
+      right: 0;
+      max-width: 175px;
+      padding: 15px 17px;
+      font-size: 0.92rem;
     }
 
     .kv-menu {
@@ -458,9 +611,10 @@ section.kv-hero#home
     .kv-hero__layout
 
       .kv-collage
+
         figure.kv-photo.kv-photo--main
           img(
-            src="/images/Image Jul 21, 2026, 06_42_29 PM.png"
+            src="/images/Image%20Jul%2021,%202026,%2006_42_29%20PM.png"
             alt="Атмосфера камерного концерта"
           )
 
@@ -470,13 +624,23 @@ section.kv-hero#home
 
         figure.kv-photo.kv-photo--side
           img(
-            src="/images/Image Jul 21, 2026, 04_20_18 PM.png"
+            src="/images/Image%20Jul%2021,%202026,%2004_20_18%20PM.png"
             alt="Уютное пространство квартирника"
           )
 
           figcaption
             span 02
             span До пятидесяти гостей
+
+        figure.kv-photo.kv-photo--torn
+          img(
+            src="/images/Image%20Jul%2022,%202026,%2011_55_18%20AM.png"
+            alt="Живое выступление на камерном концерте"
+          )
+
+          figcaption
+            span 03
+            span Настоящий живой момент
 
         .kv-note
           | Не концертный зал.
@@ -498,19 +662,40 @@ section.kv-hero#home
         span.kv-age 18+
 
     nav.kv-menu(aria-label="Навигация по странице")
-      each item in ['Цены', 'Еда', 'Напитки', 'Игры и активности', 'Дополнительные услуги', 'Где проводим', 'Галерея']
-        -
-          const links = {
-            'Цены': '#prices',
-            'Еда': '#food',
-            'Напитки': '#drinks',
-            'Игры и активности': '#games',
-            'Дополнительные услуги': '#services',
-            'Где проводим': '#places',
-            'Галерея': '#gallery'
+      -
+        const menuItems = [
+          {
+            title: 'Цены',
+            href: '#prices'
+          },
+          {
+            title: 'Еда',
+            href: '#food'
+          },
+          {
+            title: 'Напитки',
+            href: '#drinks'
+          },
+          {
+            title: 'Игры и активности',
+            href: '#games'
+          },
+          {
+            title: 'Дополнительные услуги',
+            href: '#services'
+          },
+          {
+            title: 'Где проводим',
+            href: '#places'
+          },
+          {
+            title: 'Галерея',
+            href: '#gallery'
           }
+        ]
 
+      each item in menuItems
         a.kv-menu__link(
-          href=links[item]
-          class=item === 'Цены' ? 'kv-menu__link--accent' : ''
-        )= item
+          href=item.href
+          class=item.title === 'Цены' ? 'kv-menu__link--accent' : ''
+        )= item.title
