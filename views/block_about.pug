@@ -233,6 +233,14 @@ style.
     font-weight: 400;
   }
 
+  .music-party-steps .col-6 {
+    transition: transform .25s ease;
+  }
+
+  .music-party-steps .col-6:hover {
+    transform: translateY(-6px);
+  }
+
   .music-party-step {
     height: 100%;
     min-height: 145px;
@@ -240,6 +248,13 @@ style.
     border: 1px solid rgba(255, 255, 255, .15);
     border-radius: 14px;
     background: rgba(255, 255, 255, .075);
+    transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+
+  .music-party-steps .col-6:hover .music-party-step {
+    border-color: rgba(255, 255, 255, .28);
+    background: rgba(255, 255, 255, .105);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
   }
 
   .music-party-step-number {
