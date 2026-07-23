@@ -1,68 +1,355 @@
-section.mt-5
-  // Верхняя часть ограничена шириной 990px
-  .container.my-4(style="max-width:990px;")
-    .row.g-3.align-items-stretch.mb-3
-      .col-lg-5
-        img.w-100.h-100.object-fit-cover.rounded-3(
-          src="/images/wine_casino_banner.png"
-          alt="Wine photo"
-        )
+section.music-party-about
+  span.music-party-about__decor LIVE MUSIC
+  span.music-party-about__decor-vertical SING TOGETHER
+  span.music-party-about__monogram MP
 
-      .col-lg-7
-        .p-3.rounded-3.h-100.d-flex.flex-column.justify-content-center(
-          style="background:#fde6ed;"
-        )
-          h2.mb-2(
-            style="color:#d81b90; font-size:clamp(1.5rem,3vw,2.2rem);"
-          )
-            | Что такое
-            br
-            span(style="font-style:italic;") Винное казино?
+  .music-party-about__stamp
+    span MUSIC PARTY
+    span LIVE SESSION
+    span MOSCOW
 
-          p.mb-0(style="font-size:.95rem;")
-            | Увлекательная игра-дегустация, во время которой вы узнаете много нового
-            | о сортах винограда, тонкостях ароматики и регионах вин.
-            | Гости дегустируют вино «вслепую», угадывая сорт, страну,
-            | крепость и даже год урожая.
+  .container.position-relative.py-5(
+    style="max-width:1100px; z-index:1;"
+  )
+    .music-party-panel
+      .row.g-0
+        // Описание
+        .col-lg-7
+          .music-party-description
+            span.music-party-eyebrow 02 / О формате
 
-    p.mt-2.mb-4(style="font-size:.9rem;")
-      | Винное казино не является азартной игрой.
-      | Во время проведения игры участники не делают денежные ставки.
-      br
-      strong Чрезмерное употребление алкоголя вредит вашему здоровью
+            h2.music-party-title
+              | Что такое
+              br
+              span Music Party?
 
-  // Розовый фон на всю ширину страницы
-  .py-4(style="background:#fde6ed;")
-    .container(style="max-width:990px;")
-      h2.mb-3(
-        style="color:#d81b90; font-size:clamp(1.5rem,3vw,2.2rem);"
-      ) Всего 4 простых шага
+            p.music-party-text
+              | Music Party — это формат мероприятия, где гости объединяются
+              | в общем музыкальном настроении.
 
-      .row.g-3
-        .col-lg-3.col-sm-6
-          .p-3.bg-white.rounded-3.h-100
-            h3.mb-2(style="color:#d81b90; font-size:1.5rem;") 01
-            h5.mb-1(style="font-size:1rem;") Пакетное предложение
-            p.mb-0(style="font-size:.875rem;")
-              | Выбираем базовый пакет: silver, gold или platinum
+            p.music-party-text
+              | Это событие, в котором рождается атмосфера живого исполнения
+              | и единства. Гости становятся частью музыкального процесса
+              | и поют вместе с артистами.
 
-        .col-lg-3.col-sm-6
-          .p-3.bg-white.rounded-3.h-100
-            h3.mb-2(style="color:#d81b90; font-size:1.5rem;") 02
-            h5.mb-1(style="font-size:1rem;") Еда и напитки
-            p.mb-0(style="font-size:.875rem;")
-              | Выбирайте блюда и напитки из нашей коллекции
+            p.music-party-text
+              | Слова песен выводятся на экран или оформляются в стильные
+              | песенники, чтобы каждый мог легко включиться в процесс —
+              | без стеснения и формальностей.
 
-        .col-lg-3.col-sm-6
-          .p-3.bg-white.rounded-3.h-100
-            h3.mb-2(style="color:#d81b90; font-size:1.5rem;") 03
-            h5.mb-1(style="font-size:1rem;") Игры и активности
-            p.mb-0(style="font-size:.875rem;")
-              | Добавьте развлечения для гостей
+            p.music-party-text.mb-0
+              | Вечер, где музыка объединяет людей, создаёт ощущение единства
+              | и превращает гостей в участников одного общего музыкального момента.
 
-        .col-lg-3.col-sm-6
-          .p-3.bg-white.rounded-3.h-100
-            h3.mb-2(style="color:#d81b90; font-size:1.5rem;") 04
-            h5.mb-1(style="font-size:1rem;") Дополнительные услуги
-            p.mb-0(style="font-size:.875rem;")
-              | Выберите услуги для завершённого мероприятия
+        // Шаги
+        .col-lg-5
+          .music-party-steps
+            span.music-party-eyebrow 03 / Как проходит вечер
+
+            h2.music-party-steps-title 4 простых шага
+
+            .row.g-2
+              .col-6
+                .music-party-step
+                  span.music-party-step-number 01
+                  h3 Выбираем формат
+                  p Подбираем программу и музыкальное настроение.
+
+              .col-6
+                .music-party-step
+                  span.music-party-step-number 02
+                  h3 Добавляем опции
+                  p Выбираем артистов, ведущего и оборудование.
+
+              .col-6
+                .music-party-step
+                  span.music-party-step-number 03
+                  h3 Выбираем площадку
+                  p Подбираем уютный лофт или музыкальную студию.
+
+              .col-6
+                .music-party-step
+                  span.music-party-step-number 04
+                  h3 Поём вместе
+                  p Создаём один общий живой музыкальный момент.
+
+style.
+  .music-party-about {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 85% 20%,
+        rgba(141, 66, 72, .14),
+        transparent 32%
+      ),
+      linear-gradient(
+        135deg,
+        #f1e8dc 0%,
+        #eadfce 55%,
+        #ddc8b3 100%
+      );
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .music-party-about__decor {
+    position: absolute;
+    top: 18px;
+    left: 4%;
+    color: rgba(111, 55, 52, .07);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(5rem, 13vw, 12rem);
+    font-style: italic;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .music-party-about__decor-vertical {
+    position: absolute;
+    top: 120px;
+    right: 22px;
+    color: rgba(111, 55, 52, .12);
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    pointer-events: none;
+  }
+
+  .music-party-about__monogram {
+    position: absolute;
+    right: 9%;
+    bottom: 32px;
+    color: rgba(111, 55, 52, .08);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-style: italic;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .music-party-about__stamp {
+    position: absolute;
+    top: 90px;
+    right: 9%;
+    width: 130px;
+    height: 130px;
+    border: 1px solid rgba(111, 55, 52, .18);
+    border-radius: 50%;
+    color: rgba(111, 55, 52, .22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: .12em;
+    pointer-events: none;
+  }
+
+  .music-party-about__stamp span:nth-child(1) {
+    font-size: .72rem;
+    font-weight: 700;
+  }
+
+  .music-party-about__stamp span:nth-child(2) {
+    margin-top: 4px;
+    font-size: .6rem;
+  }
+
+  .music-party-about__stamp span:nth-child(3) {
+    margin-top: 8px;
+    font-size: .58rem;
+  }
+
+  .music-party-panel {
+    overflow: hidden;
+    border: 1px solid rgba(93, 47, 43, .2);
+    border-radius: 24px;
+    background:
+      linear-gradient(
+        135deg,
+        #251512 0%,
+        #3c211d 58%,
+        #593032 100%
+      );
+    box-shadow: 0 24px 55px rgba(70, 42, 31, .22);
+  }
+
+  .music-party-description {
+    height: 100%;
+    padding: 42px;
+  }
+
+  .music-party-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #dfa397;
+    font-size: .72rem;
+    font-style: italic;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .music-party-title {
+    margin-bottom: 25px;
+    color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: .95;
+  }
+
+  .music-party-title span {
+    color: #e99c8d;
+    font-style: italic;
+  }
+
+  .music-party-text {
+    max-width: 650px;
+    margin-bottom: 13px;
+    color: #eee1d8;
+    font-family: Arial, sans-serif;
+    font-size: .95rem;
+    line-height: 1.65;
+  }
+
+  .music-party-steps {
+    height: 100%;
+    padding: 42px 30px;
+    border-left: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(0, 0, 0, .12);
+  }
+
+  .music-party-steps-title {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 400;
+  }
+
+  .music-party-step {
+    height: 100%;
+    min-height: 145px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .075);
+  }
+
+  .music-party-step-number {
+    display: block;
+    margin-bottom: 8px;
+    color: #e4a094;
+    font-size: 1.45rem;
+    font-style: italic;
+  }
+
+  .music-party-step h3 {
+    margin-bottom: 7px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+  }
+
+  .music-party-step p {
+    margin: 0;
+    color: #dcccc3;
+    font-family: Arial, sans-serif;
+    font-size: .76rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 991.98px) {
+    .music-party-description,
+    .music-party-steps {
+      padding: 28px;
+    }
+
+    .music-party-steps {
+      border-top: 1px solid rgba(255, 255, 255, .14);
+      border-left: 0;
+    }
+
+    .music-party-about__decor {
+      top: 24px;
+      left: 2%;
+      font-size: 7rem;
+    }
+
+    .music-party-about__decor-vertical {
+      right: 10px;
+      font-size: .7rem;
+      letter-spacing: .25em;
+    }
+
+    .music-party-about__stamp {
+      top: 70px;
+      right: 4%;
+      width: 100px;
+      height: 100px;
+    }
+
+    .music-party-about__monogram {
+      right: 5%;
+      bottom: 20px;
+      font-size: 5rem;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .music-party-panel {
+      border-radius: 18px;
+    }
+
+    .music-party-description,
+    .music-party-steps {
+      padding: 22px;
+    }
+
+    .music-party-title {
+      font-size: 2.6rem;
+    }
+
+    .music-party-step {
+      min-height: 135px;
+      padding: 13px;
+    }
+
+    .music-party-about__decor {
+      top: 20px;
+      font-size: 4.3rem;
+    }
+
+    .music-party-about__decor-vertical {
+      display: none;
+    }
+
+    .music-party-about__stamp {
+      top: 58px;
+      right: 12px;
+      width: 82px;
+      height: 82px;
+    }
+
+    .music-party-about__stamp span:nth-child(1) {
+      font-size: .52rem;
+    }
+
+    .music-party-about__stamp span:nth-child(2),
+    .music-party-about__stamp span:nth-child(3) {
+      font-size: .45rem;
+    }
+
+    .music-party-about__monogram {
+      right: 12px;
+      bottom: 12px;
+      font-size: 3.6rem;
+    }
+  }

@@ -1,701 +1,209 @@
+section.hero-apartment
+  img.hero-apartment__bg(
+    src="/images/Image Jul 21, 2026, 04_20_18 PM.png"
+    alt="Квартирники"
+  )
+
+  .container.hero-apartment__inner
+    .row.w-100.justify-content-end
+      .col-lg-7
+        .hero-apartment__content
+          span.hero-apartment__eyebrow 01 / Квартирники
+
+          h1.hero-apartment__title Квартирники
+
+          p.hero-apartment__subtitle ближе к музыке
+
+          p.hero-apartment__description
+            | Камерные концерты в уютных лофтах и студиях,
+            br
+            | где между музыкантами и зрителями нет расстояния.
+
+          span.hero-apartment__age 18+
+
+  .hero-apartment__menu
+    .container(style="max-width:990px;")
+      .d-flex.flex-wrap.gap-2.py-3
+        a.hero-apartment__link.hero-apartment__link--active(
+          href="#prices"
+        ) Цены
+
+        a.hero-apartment__link(
+          href="#games"
+        ) Игры и активности
+
+        a.hero-apartment__link(
+          href="#services"
+        ) Дополнительные услуги
+
+        a.hero-apartment__link(
+          href="#studios"
+        ) Где проводим
+
+        a.hero-apartment__link(
+          href="#gallery"
+        ) Галерея
+
 style.
-  @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500&family=Manrope:wght@400;500;600&display=swap");
-
-  :root {
-    --kv-paper: #eee5d7;
-    --kv-paper-light: #f8f2e9;
-    --kv-ink: #1d1916;
-    --kv-muted: #766c62;
-    --kv-wine: #713d43;
-    --kv-wine-dark: #51282d;
-    --kv-line: rgba(29, 25, 22, 0.22);
-    --kv-display: "Cormorant Garamond", Georgia, serif;
-    --kv-main: "Manrope", Arial, sans-serif;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  .kv-hero {
+  .hero-apartment {
     position: relative;
+    min-height: 700px;
     overflow: hidden;
-    padding: clamp(30px, 6vw, 72px) 0;
-    color: var(--kv-ink);
-    background:
-      radial-gradient(
-        circle at 14% 18%,
-        rgba(113, 61, 67, 0.12),
-        transparent 30%
-      ),
-      radial-gradient(
-        circle at 88% 80%,
-        rgba(116, 91, 66, 0.12),
-        transparent 28%
-      ),
-      var(--kv-paper);
-    font-family: var(--kv-main);
   }
 
-  .kv-hero::before {
+  .hero-apartment__bg {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    content: "";
-    opacity: 0.13;
-    background-image:
-      repeating-radial-gradient(
-        circle at 20% 30%,
-        rgba(45, 35, 28, 0.18) 0,
-        rgba(45, 35, 28, 0.18) 0.7px,
-        transparent 0.8px,
-        transparent 4px
-      );
-    mix-blend-mode: multiply;
-  }
-
-  .kv-hero__container {
-    position: relative;
-    z-index: 2;
-    width: min(calc(100% - 44px), 1120px);
-    margin-inline: auto;
-  }
-
-  .kv-hero__eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 28px;
-    color: var(--kv-muted);
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
-
-  .kv-hero__eyebrow::before {
-    width: 50px;
-    height: 1px;
-    content: "";
-    background: var(--kv-wine);
-  }
-
-  .kv-hero__layout {
-    display: grid;
-    grid-template-columns:
-      minmax(0, 1.35fr)
-      minmax(300px, 0.85fr);
-    align-items: center;
-    gap: clamp(30px, 5vw, 74px);
-  }
-
-  /* Коллаж */
-
-  .kv-collage {
-    position: relative;
-    min-height: 690px;
-  }
-
-  .kv-photo {
-    position: absolute;
-    margin: 0;
-    padding: 12px 12px 48px;
-    background: var(--kv-paper-light);
-    box-shadow:
-      0 24px 55px rgba(48, 35, 28, 0.2),
-      0 5px 14px rgba(48, 35, 28, 0.12);
-    transition:
-      transform 450ms cubic-bezier(.2, .8, .2, 1),
-      box-shadow 450ms ease;
-  }
-
-  .kv-photo img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter:
-      sepia(0.23)
-      saturate(0.75)
-      contrast(1.04);
+    opacity: .9;
   }
 
-  .kv-photo figcaption {
-    position: absolute;
-    right: 18px;
-    bottom: 13px;
-    left: 18px;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    color: var(--kv-muted);
-    font-size: 0.61rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  /* Нижний рваный край у первых двух фото */
-
-  .kv-photo:not(.kv-photo--torn)::before {
-    position: absolute;
-    right: 0;
-    bottom: -12px;
-    left: 0;
-    height: 25px;
-    content: "";
-    background: var(--kv-paper-light);
-    clip-path: polygon(
-      0 0,
-      3% 45%,
-      7% 12%,
-      11% 62%,
-      16% 18%,
-      21% 68%,
-      26% 21%,
-      31% 72%,
-      37% 26%,
-      42% 65%,
-      48% 13%,
-      54% 71%,
-      60% 23%,
-      66% 66%,
-      72% 15%,
-      78% 73%,
-      84% 24%,
-      90% 64%,
-      95% 17%,
-      100% 55%,
-      100% 0
-    );
-  }
-
-  /* Полупрозрачный скотч */
-
-  .kv-photo:not(.kv-photo--torn)::after {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    width: 108px;
-    height: 30px;
-    content: "";
-    background: rgba(224, 208, 178, 0.74);
-    box-shadow: 0 2px 5px rgba(50, 38, 30, 0.08);
-    transform: translateX(-50%) rotate(-2deg);
-    backdrop-filter: blur(1px);
-  }
-
-  /* Первая фотография */
-
-  .kv-photo--main {
-    top: 24px;
-    left: 0;
-    z-index: 2;
-    width: 72%;
-    height: 405px;
-    transform: rotate(-3.2deg);
-  }
-
-  .kv-photo--main img {
-    object-position: center;
-  }
-
-  /* Вторая фотография */
-
-  .kv-photo--side {
-    right: 0;
-    bottom: 0;
-    z-index: 3;
-    width: 49%;
-    height: 345px;
-    transform: rotate(4deg);
-  }
-
-  .kv-photo--side img {
-    object-position: center;
-  }
-
-  /* Третья фотография — оторванный фрагмент */
-
-  .kv-photo--torn {
-    top: 330px;
-    left: 18%;
-    z-index: 4;
-    width: 44%;
-    height: 285px;
-    padding: 13px 13px 45px;
-    background: var(--kv-paper-light);
-
-    clip-path: polygon(
-      2% 3%,
-      7% 1%,
-      12% 3.5%,
-      17% 1%,
-      23% 3%,
-      29% 0.5%,
-      35% 3.5%,
-      41% 1%,
-      47% 3%,
-      53% 0.5%,
-      59% 3%,
-      65% 1%,
-      71% 3.5%,
-      77% 0.5%,
-      83% 3%,
-      89% 1%,
-      95% 3.5%,
-      99% 1%,
-
-      98% 8%,
-      100% 15%,
-      97.5% 22%,
-      99.5% 29%,
-      97% 36%,
-      100% 43%,
-      97.5% 50%,
-      99.5% 57%,
-      97% 64%,
-      100% 71%,
-      97.5% 78%,
-      99.5% 85%,
-      97% 92%,
-      99% 98%,
-
-      93% 97%,
-      87% 100%,
-      81% 97%,
-      75% 99.5%,
-      69% 97%,
-      63% 100%,
-      57% 97%,
-      51% 99.5%,
-      45% 97%,
-      39% 100%,
-      33% 97%,
-      27% 99.5%,
-      21% 97%,
-      15% 100%,
-      9% 97%,
-      2% 99%,
-
-      3% 92%,
-      0.5% 85%,
-      3% 78%,
-      0% 71%,
-      2.5% 64%,
-      0.5% 57%,
-      3% 50%,
-      0% 43%,
-      2.5% 36%,
-      0.5% 29%,
-      3% 22%,
-      0% 15%,
-      2.5% 8%
-    );
-
-    transform: rotate(-6deg);
-    filter:
-      drop-shadow(0 22px 22px rgba(48, 35, 28, 0.23))
-      drop-shadow(0 5px 5px rgba(48, 35, 28, 0.12));
-  }
-
-  .kv-photo--torn img {
-    object-position: center;
-    filter:
-      sepia(0.34)
-      saturate(0.7)
-      contrast(1.08)
-      brightness(0.94);
-  }
-
-  .kv-photo:hover {
-    z-index: 8;
-    box-shadow:
-      0 32px 70px rgba(48, 35, 28, 0.25),
-      0 8px 18px rgba(48, 35, 28, 0.14);
-  }
-
-  .kv-photo--main:hover {
-    transform: rotate(-1.5deg) translateY(-8px);
-  }
-
-  .kv-photo--side:hover {
-    transform: rotate(2deg) translateY(-8px);
-  }
-
-  .kv-photo--torn:hover {
-    transform:
-      rotate(-3deg)
-      translateY(-9px)
-      scale(1.02);
-  }
-
-  /* Записка */
-
-  .kv-note {
-    position: absolute;
-    right: 4%;
-    top: 285px;
-    z-index: 6;
-    max-width: 205px;
-    padding: 18px 21px;
-    color: var(--kv-paper-light);
-    background: var(--kv-wine);
-    font-family: var(--kv-display);
-    font-size: 1.04rem;
-    font-style: italic;
-    line-height: 1.35;
-    transform: rotate(2.5deg);
-    box-shadow: 0 15px 35px rgba(81, 40, 45, 0.22);
-  }
-
-  .kv-note::after {
-    position: absolute;
-    right: 24px;
-    bottom: -12px;
-    width: 25px;
-    height: 25px;
-    content: "";
-    background: var(--kv-wine);
-    transform: rotate(45deg);
-  }
-
-  /* Текстовая часть */
-
-  .kv-content {
-    position: relative;
-    padding: clamp(24px, 4vw, 50px) 0;
-  }
-
-  .kv-content__number {
-    display: block;
-    margin-bottom: 18px;
-    color: var(--kv-wine);
-    font-family: var(--kv-display);
-    font-size: 1rem;
-    font-style: italic;
-  }
-
-  .kv-title {
-    margin: 0;
-    font-family: var(--kv-display);
-    font-size: clamp(4rem, 8vw, 7.6rem);
-    font-weight: 400;
-    line-height: 0.75;
-    letter-spacing: -0.055em;
-  }
-
-  .kv-title span {
-    display: block;
-    margin-top: 24px;
-    margin-left: 20%;
-    color: var(--kv-wine);
-    font-size: 0.34em;
-    font-style: italic;
-    line-height: 1;
-    letter-spacing: 0;
-  }
-
-  .kv-description {
-    max-width: 390px;
-    margin: 38px 0 0;
-    color: #49413b;
-    font-family: var(--kv-display);
-    font-size: clamp(1.15rem, 2vw, 1.42rem);
-    line-height: 1.55;
-  }
-
-  .kv-description strong {
-    color: var(--kv-wine-dark);
-    font-weight: 500;
-  }
-
-  .kv-age {
-    display: inline-grid;
-    width: 64px;
-    height: 64px;
-    margin-top: 28px;
-    place-items: center;
-    border: 1px solid var(--kv-ink);
-    border-radius: 50%;
-    font-family: var(--kv-display);
-    font-size: 1.25rem;
-    font-style: italic;
-    transform: rotate(7deg);
-  }
-
-  /* Навигация */
-
-  .kv-menu {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 46px;
-    padding-top: 24px;
-    border-top: 1px solid var(--kv-line);
-  }
-
-  .kv-menu__link {
+  .hero-apartment__inner {
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 620px;
+    max-width: 990px;
+  }
+
+  .hero-apartment__content {
+    padding: 34px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 20px;
+    background: rgba(18, 10, 6, .58);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, .32);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+  }
+
+  .hero-apartment__eyebrow {
+    display: block;
+    margin-bottom: 14px;
+    color: #f5c8bd;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .95rem;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: .06em;
+  }
+
+  .hero-apartment__title {
+    margin: 0;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.3rem, 7vw, 6.4rem);
+    font-weight: 400;
+    line-height: .95;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .9);
+  }
+
+  .hero-apartment__subtitle {
+    margin: 8px 0 28px;
+    color: #efb0a3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-style: italic;
+    line-height: 1.1;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, .85);
+  }
+
+  .hero-apartment__description {
+    max-width: 500px;
+    margin-bottom: 28px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  .hero-apartment__age {
     display: inline-flex;
     align-items: center;
-    min-height: 43px;
-    padding: 8px 17px;
-    overflow: hidden;
-    border: 1px solid var(--kv-line);
-    color: var(--kv-ink);
-    background: rgba(248, 242, 233, 0.4);
-    font-size: 0.72rem;
-    letter-spacing: 0.09em;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(255, 255, 255, .85);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .18);
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+  }
+
+  .hero-apartment__menu {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, .28);
+    background: rgba(15, 9, 6, .62);
+    backdrop-filter: blur(5px);
+  }
+
+  .hero-apartment__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 9px 18px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    font-size: .8rem;
+    letter-spacing: .04em;
     text-decoration: none;
     text-transform: uppercase;
     transition:
-      color 220ms ease,
-      border-color 220ms ease,
-      transform 220ms ease;
+      background-color .2s ease,
+      border-color .2s ease;
   }
 
-  .kv-menu__link::before {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    content: "";
-    background: var(--kv-wine);
-    transform: translateY(102%);
-    transition: transform 260ms cubic-bezier(.2, .8, .2, 1);
-  }
-
-  .kv-menu__link:hover {
+  .hero-apartment__link:hover,
+  .hero-apartment__link--active {
+    border-color: #8d4248;
+    background: #8d4248;
     color: #fff;
-    border-color: var(--kv-wine);
-    transform: translateY(-3px);
   }
 
-  .kv-menu__link:hover::before {
-    transform: translateY(0);
-  }
-
-  .kv-menu__link--accent {
-    color: var(--kv-paper-light);
-    border-color: var(--kv-wine);
-    background: var(--kv-wine);
-  }
-
-  .kv-menu__link--accent::after {
-    margin-left: 13px;
-    content: "↗";
-    font-size: 1rem;
-    transition: transform 220ms ease;
-  }
-
-  .kv-menu__link--accent:hover::after {
-    transform: translate(3px, -3px);
-  }
-
-  /* Планшет */
-
-  @media (max-width: 900px) {
-    .kv-hero__layout {
-      grid-template-columns: 1fr;
+  @media (max-width: 991.98px) {
+    .hero-apartment {
+      min-height: auto;
     }
 
-    .kv-content {
-      grid-row: 1;
-      max-width: 650px;
+    .hero-apartment__inner {
+      min-height: 560px;
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
-    .kv-collage {
-      grid-row: 2;
-      min-height: 720px;
-    }
-
-    .kv-title {
-      font-size: clamp(4rem, 14vw, 7rem);
+    .hero-apartment__content {
+      padding: 26px;
     }
   }
 
-  /* Телефон */
-
-  @media (max-width: 600px) {
-    .kv-hero {
-      padding-top: 28px;
+  @media (max-width: 575.98px) {
+    .hero-apartment__inner {
+      min-height: 520px;
     }
 
-    .kv-hero__container {
-      width: min(calc(100% - 34px), 1120px);
+    .hero-apartment__content {
+      padding: 22px;
+      border-radius: 16px;
     }
 
-    .kv-content {
-      padding-bottom: 8px;
+    .hero-apartment__title {
+      font-size: 3.2rem;
     }
 
-    .kv-title {
-      font-size: clamp(3.65rem, 19vw, 5.5rem);
+    .hero-apartment__description {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
-    .kv-title span {
-      margin-left: 8%;
-    }
-
-    .kv-collage {
-      min-height: 750px;
-      margin-top: 24px;
-    }
-
-    .kv-photo {
-      padding: 8px 8px 42px;
-    }
-
-    .kv-photo--main {
-      top: 15px;
-      width: 89%;
-      height: 335px;
-    }
-
-    .kv-photo--side {
-      right: 0;
-      bottom: 48px;
-      width: 64%;
-      height: 290px;
-    }
-
-    .kv-photo--torn {
-      top: 360px;
-      left: 1%;
-      width: 65%;
-      height: 270px;
-      padding: 9px 9px 40px;
-      transform: rotate(-4deg);
-    }
-
-    .kv-photo--torn:hover {
-      transform:
-        rotate(-2deg)
-        translateY(-5px);
-    }
-
-    .kv-note {
-      top: 300px;
-      right: 0;
-      max-width: 175px;
-      padding: 15px 17px;
-      font-size: 0.92rem;
-    }
-
-    .kv-menu {
-      gap: 8px;
-      margin-top: 30px;
-    }
-
-    .kv-menu__link {
-      min-height: 40px;
-      padding: 7px 13px;
-      font-size: 0.63rem;
+    .hero-apartment__link {
+      padding: 8px 12px;
+      font-size: .72rem;
     }
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .kv-photo,
-    .kv-menu__link,
-    .kv-menu__link::before {
-      transition: none;
-    }
-  }
-
-
-section.kv-hero#home
-  .kv-hero__container
-
-    .kv-hero__eyebrow
-      | Живой звук · Москва · камерные встречи
-
-    .kv-hero__layout
-
-      .kv-collage
-
-        figure.kv-photo.kv-photo--main
-          img(
-            src="/images/Image%20Jul%2021,%202026,%2006_42_29%20PM.png"
-            alt="Атмосфера камерного концерта"
-          )
-
-          figcaption
-            span 01
-            span Музыка совсем рядом
-
-        figure.kv-photo.kv-photo--side
-          img(
-            src="/images/Image%20Jul%2021,%202026,%2004_20_18%20PM.png"
-            alt="Уютное пространство квартирника"
-          )
-
-          figcaption
-            span 02
-            span До пятидесяти гостей
-
-        figure.kv-photo.kv-photo--torn
-          img(
-            src="/images/Image%20Jul%2022,%202026,%2011_55_18%20AM.png"
-            alt="Живое выступление на камерном концерте"
-          )
-
-          figcaption
-            span 03
-            span Настоящий живой момент
-
-        .kv-note
-          | Не концертный зал.
-          br
-          | Вечер среди своих.
-
-      .kv-content
-        span.kv-content__number 01 / Квартирники
-
-        h1.kv-title
-          | Квартирники
-          span ближе к музыке
-
-        p.kv-description
-          | Камерные концерты в уютных лофтах и студиях,
-          | где между музыкантами и зрителями
-          strong  нет расстояния.
-
-        span.kv-age 18+
-
-    nav.kv-menu(aria-label="Навигация по странице")
-      -
-        const menuItems = [
-          {
-            title: 'Цены',
-            href: '#prices'
-          },
-          {
-            title: 'Еда',
-            href: '#food'
-          },
-          {
-            title: 'Напитки',
-            href: '#drinks'
-          },
-          {
-            title: 'Игры и активности',
-            href: '#games'
-          },
-          {
-            title: 'Дополнительные услуги',
-            href: '#services'
-          },
-          {
-            title: 'Где проводим',
-            href: '#places'
-          },
-          {
-            title: 'Галерея',
-            href: '#gallery'
-          }
-        ]
-
-      each item in menuItems
-        a.kv-menu__link(
-          href=item.href
-          class=item.title === 'Цены' ? 'kv-menu__link--accent' : ''
-        )= item.title
