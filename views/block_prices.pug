@@ -42,13 +42,14 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li 3,5 часа
-              li Casino Game
-              li 6 вин из категории Silver
-              li Дегустационная порция: 50 мл
-              li Фуршет: 7 позиций
-              li 2 блюда на выбор
-              li Безалкогольные напитки
+              li Артисты
+              li Декор площадки
+
+            button.wine-prices__button(
+              type="button"
+              data-price-modal-open
+              data-package="Silver"
+            ) Посмотреть программу
 
         .col-lg-4
           article.wine-prices__card.wine-prices__card--gold
@@ -60,13 +61,16 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li 4 часа
-              li Casino Game + Black Casino
-              li 6 вин из категории Gold
-              li Дегустационная порция: 50 мл
-              li Фуршет: 9 позиций
-              li 2 блюда на выбор
-              li Безалкогольные напитки
+              li Артисты
+              li Декор площадки
+              li Еда
+              li Площадка
+
+            button.wine-prices__button(
+              type="button"
+              data-price-modal-open
+              data-package="Gold"
+            ) Посмотреть программу
 
         .col-lg-4
           article.wine-prices__card.wine-prices__card--platinum
@@ -78,13 +82,67 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li 4 часа
-              li Casino Game + Black Casino
-              li 8 вин из категории Platinum
-              li Дегустационная порция: 50 мл
-              li Фуршет: 11 позиций
-              li 3 блюда на выбор
-              li Безалкогольные напитки
+              li Артисты
+              li Декор площадки
+              li Еда
+              li Площадка
+              li Фотограф
+              li Видеограф
+
+            button.wine-prices__button(
+              type="button"
+              data-price-modal-open
+              data-package="Platinum"
+            ) Посмотреть программу
+
+  .wine-prices-modal(
+    data-price-modal
+    aria-hidden="true"
+  )
+    .wine-prices-modal__dialog(
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="price-modal-title"
+    )
+      span.wine-prices-modal__eyebrow(data-price-modal-package) Пакет
+
+      h3#wine-prices-modal-title.wine-prices-modal__title
+        | 
+
+      .wine-prices-modal__program
+        h4 Программа:
+
+        p
+          strong 30 минут
+          |  - сбор гостей и начало вечеринки
+          br
+          | гостей встречает ведущий / велкам активность от ведущего
+
+        p
+          strong 5 минут
+          |  - открытие мероприятия
+          br
+          | знакомство с гостями
+
+        p
+          strong 10 минут
+          |  - музыкальный перерыв
+
+        p
+          strong 40 минут
+          |  - угадай мелодию
+
+        p
+          strong 20 минут
+          |  - танцевальный перерыв
+
+        p
+          strong 60 минут
+          |  - выступление музыкантов / совместное пение
+
+        p.mb-0
+          strong 30 минут
+          |  - надо подумать
 
 style.
   .wine-prices {
@@ -260,6 +318,8 @@ style.
 
   .wine-prices__card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     min-height: 430px;
     padding: 26px 24px 24px;
@@ -366,6 +426,37 @@ style.
     line-height: 1.5;
   }
 
+  .wine-prices__button {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    margin-top: auto;
+    padding: 10px 16px;
+    border: 1px solid #8d4248;
+    background: #8d4248;
+    color: #fff8ec;
+    font-family: Arial, sans-serif;
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background-color .2s ease,
+      color .2s ease,
+      transform .2s ease;
+  }
+
+  .wine-prices__button:hover {
+    background: #fff8ec;
+    color: #8d4248;
+    transform: translateY(-2px);
+  }
+
   .wine-prices__list li {
     position: relative;
     padding: 9px 0 9px 23px;
@@ -382,6 +473,90 @@ style.
     border: 1px solid #8d4248;
     border-radius: 50%;
     background: rgba(141, 66, 72, .12);
+  }
+
+  .wine-prices-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+    background: rgba(12, 7, 5, .72);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity .22s ease,
+      visibility .22s ease;
+  }
+
+  .wine-prices-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wine-prices-modal__dialog {
+    width: min(100%, 460px);
+    padding: 34px 32px 30px;
+    border: 1px solid rgba(255, 220, 170, .32);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(255, 250, 235, .98), rgba(238, 217, 190, .97)),
+      #f5ead9;
+    box-shadow:
+      inset 0 0 0 7px rgba(96, 44, 31, .06),
+      0 30px 70px rgba(0, 0, 0, .38);
+    transform: translateY(14px) scale(.98);
+    transition: transform .22s ease;
+  }
+
+  .wine-prices-modal.is-open .wine-prices-modal__dialog {
+    transform: translateY(0) scale(1);
+  }
+
+  .wine-prices-modal__eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #8d4248;
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  .wine-prices-modal__title {
+    margin: 0 0 16px;
+    color: #2d150f;
+    font-size: clamp(2.1rem, 6vw, 3.1rem);
+    font-weight: 400;
+    line-height: .98;
+  }
+
+  .wine-prices-modal__program {
+    margin: 0;
+    color: #44251d;
+    font-family: Arial, sans-serif;
+    font-size: .96rem;
+    line-height: 1.65;
+  }
+
+  .wine-prices-modal__program h4 {
+    margin: 0 0 14px;
+    color: #8d4248;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .wine-prices-modal__program p {
+    margin: 0 0 12px;
+  }
+
+  .wine-prices-modal__program strong {
+    color: #2d150f;
+    font-weight: 800;
   }
 
   @media (max-width: 991.98px) {
@@ -422,6 +597,10 @@ style.
       padding: 24px 20px 22px;
     }
 
+    .wine-prices-modal__dialog {
+      padding: 28px 24px 26px;
+    }
+
     .wine-prices__decor {
       font-size: 4rem;
     }
@@ -436,3 +615,39 @@ style.
       font-size: 3.8rem;
     }
   }
+
+script.
+  (() => {
+    const modal = document.querySelector('[data-price-modal]');
+    const packageLabel = document.querySelector('[data-price-modal-package]');
+    const buttons = document.querySelectorAll('[data-price-modal-open]');
+
+    if (!modal || !packageLabel || !buttons.length) {
+      return;
+    }
+
+    const openModal = (packageName) => {
+      packageLabel.textContent = `Пакет ${packageName}`;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        openModal(button.dataset.package || '');
+      });
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  })();

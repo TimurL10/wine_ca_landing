@@ -1,16 +1,23 @@
 section.hero-apartment
   img.hero-apartment__bg(
     src="/images/Image Jul 21, 2026, 04_20_18 PM.png"
-    alt="Квартирники"
+    alt="Музыкальная вечеринка"
   )
+
+  a.hero-apartment__logo(
+    href="#home"
+    aria-label="MOMENTS EST.2024"
+  )
+    span.hero-apartment__logo-main MOMENTS
+    span.hero-apartment__logo-year EST.2024
 
   .container.hero-apartment__inner
     .row.w-100.justify-content-end
       .col-lg-7
         .hero-apartment__content
-          span.hero-apartment__eyebrow 01 / Квартирники
+          span.hero-apartment__eyebrow 01 / Музыкальная вечеринка
 
-          h1.hero-apartment__title Квартирники
+          h1.hero-apartment__title Музыкальная вечеринка
 
           p.hero-apartment__subtitle ближе к музыке
 
@@ -58,6 +65,37 @@ style.
     height: 100%;
     object-fit: cover;
     opacity: .9;
+  }
+
+  .hero-apartment__logo {
+    position: absolute;
+    top: 28px;
+    left: clamp(18px, 4vw, 54px);
+    z-index: 2;
+    display: inline-block;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: .78;
+    text-decoration: none;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .78);
+  }
+
+  .hero-apartment__logo-main {
+    display: block;
+    font-size: clamp(.78rem, 2vw, 1.7rem);
+    font-weight: 400;
+    letter-spacing: .02em;
+  }
+
+  .hero-apartment__logo-year {
+    display: block;
+    margin-top: 4px;
+    margin-left: 69%;
+    font-family: Arial, sans-serif;
+    font-size: clamp(.2rem, .47vw, .34rem);
+    font-weight: 700;
+    letter-spacing: .03em;
+    white-space: nowrap;
   }
 
   .hero-apartment__inner {
@@ -184,6 +222,18 @@ style.
   }
 
   @media (max-width: 575.98px) {
+    .hero-apartment__logo {
+      top: 18px;
+    }
+
+    .hero-apartment__logo-main {
+      font-size: .8rem;
+    }
+
+    .hero-apartment__logo-year {
+      font-size: .2rem;
+    }
+
     .hero-apartment__inner {
       min-height: 520px;
     }

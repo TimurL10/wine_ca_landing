@@ -1,201 +1,571 @@
-section#studios.mt-5
-  .container(style="max-width:990px;")
-    h2.mb-1(
-      style="font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:#3f3a3c;"
-    ) Проводим в наших студиях
+section#studios.kv-studios
+  span.kv-studios__decor EVENTYON
+  span.kv-studios__decor-side MOSCOW STUDIOS
+  span.kv-studios__mark 05
 
-    p.mb-4(style="font-size:.95rem;")
-      | Четыре пространства с террасой для лучшей вечеринки
+  .kv-studios__container
+    .kv-studios__intro
+      span.kv-studios__eyebrow 05 / Где проводим
 
-    .row.g-3
-      .col-lg-3.col-sm-6
-        .studio-card.h-100.rounded-3.overflow-hidden(
-          style="background:#f3efed;"
-        )
-          .studio-card__image
-            img.studio-card__photo.studio-card__photo--main(
-              src="/images/left.svg"
-              alt="Студия на Баррикадной"
-            )
-            img.studio-card__photo.studio-card__photo--hover(
-              src="/images/right.svg"
-              alt="Студия на Баррикадной, другой ракурс"
-            )
+      h2.kv-studios__title
+        | Проводим
+        br
+        span в студиях
 
-          .p-3.d-flex.flex-column(style="min-height:230px;")
-            h3.mb-2(
-              style="color:#d81b90; font-size:1rem; font-weight:700;"
-            ) м. Баррикадная
+      p.kv-studios__lead
+        | Четыре пространства с террасой для лучшей вечеринки
 
-            p.mb-3(style="font-size:.82rem; line-height:1.45;")
-              | БЦ «Центр», Новинский бульвар, 31, 2 этаж
-              br
-              | 5 студий и конференц-зал
+    .kv-studios__board
+      .row.g-3
+        .col-lg-3.col-sm-6
+          article.studio-card.h-100
+            .studio-card__image
+              img.studio-card__photo.studio-card__photo--main(
+                src="/images/left.svg"
+                alt="Студия на Баррикадной"
+              )
+              img.studio-card__photo.studio-card__photo--hover(
+                src="/images/right.svg"
+                alt="Студия на Баррикадной, другой ракурс"
+              )
 
-            .mt-auto
-              a.d-inline-block.mb-2(
-                href="#"
-                style="background:#fff; color:#d81b90; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Посмотреть фото
+            .studio-card__body
+              h3.studio-card__title м. Баррикадная
 
-              br
+              p.studio-card__text
+                | БЦ «Центр», Новинский бульвар, 31, 2 этаж
+                br
+                | 5 студий и конференц-зал
 
-              a.d-inline-block(
-                href="#"
-                style="background:#d81b90; color:#fff; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Яндекс карты
+              .studio-card__actions
+                a.studio-card__link.studio-card__link--light(
+                  href="#"
+                ) Посмотреть фото
 
-      .col-lg-3.col-sm-6
-        .studio-card.h-100.rounded-3.overflow-hidden(
-          style="background:#f3efed;"
-        )
-          .studio-card__image
-            img.studio-card__photo.studio-card__photo--main(
-              src="/images/right.svg"
-              alt="Студия на Молодежной"
-            )
-            img.studio-card__photo.studio-card__photo--hover(
-              src="/images/left.svg"
-              alt="Студия на Молодежной, другой ракурс"
-            )
+                a.studio-card__link.studio-card__link--accent(
+                  href="#"
+                ) Яндекс карты
 
-            span.position-absolute.top-0.end-0.m-2(
-              style="background:#d81b90; color:#fff; padding:6px 9px; border-radius:20px; font-size:.65rem;"
-            ) Терраса
+        .col-lg-3.col-sm-6
+          article.studio-card.h-100
+            .studio-card__image
+              img.studio-card__photo.studio-card__photo--main(
+                src="/images/right.svg"
+                alt="Студия на Молодежной"
+              )
+              img.studio-card__photo.studio-card__photo--hover(
+                src="/images/left.svg"
+                alt="Студия на Молодежной, другой ракурс"
+              )
 
-          .p-3.d-flex.flex-column(style="min-height:230px;")
-            h3.mb-2(
-              style="color:#d81b90; font-size:1rem; font-weight:700;"
-            ) м. Молодежная
+              span.studio-card__badge Терраса
 
-            p.mb-3(style="font-size:.82rem; line-height:1.45;")
-              | Кунцево Плаза, Ярцевская, 19, 9 этаж
-              br
-              | 4 студии и конференц-зал
+            .studio-card__body
+              h3.studio-card__title м. Молодежная
 
-            .mt-auto
-              a.d-inline-block.mb-2(
-                href="#"
-                style="background:#fff; color:#d81b90; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Посмотреть фото
+              p.studio-card__text
+                | Кунцево Плаза, Ярцевская, 19, 9 этаж
+                br
+                | 4 студии и конференц-зал
 
-              br
+              .studio-card__actions
+                a.studio-card__link.studio-card__link--light(
+                  href="#"
+                ) Посмотреть фото
 
-              a.d-inline-block(
-                href="#"
-                style="background:#d81b90; color:#fff; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Яндекс карты
+                a.studio-card__link.studio-card__link--accent(
+                  href="#"
+                ) Яндекс карты
 
-      .col-lg-3.col-sm-6
-        .studio-card.h-100.rounded-3.overflow-hidden(
-          style="background:#f3efed;"
-        )
-          .studio-card__image
-            img.studio-card__photo.studio-card__photo--main(
-              src="/images/left.svg"
-              alt="Студия на Римской"
-            )
-            img.studio-card__photo.studio-card__photo--hover(
-              src="/images/right.svg"
-              alt="Студия на Римской, другой ракурс"
-            )
+        .col-lg-3.col-sm-6
+          article.studio-card.h-100
+            .studio-card__image
+              img.studio-card__photo.studio-card__photo--main(
+                src="/images/left.svg"
+                alt="Студия на Римской"
+              )
+              img.studio-card__photo.studio-card__photo--hover(
+                src="/images/right.svg"
+                alt="Студия на Римской, другой ракурс"
+              )
 
-            span.position-absolute.top-0.end-0.m-2(
-              style="background:#d81b90; color:#fff; padding:6px 9px; border-radius:20px; font-size:.65rem;"
-            ) Терраса
+              span.studio-card__badge Терраса
 
-          .p-3.d-flex.flex-column(style="min-height:230px;")
-            h3.mb-2(
-              style="color:#d81b90; font-size:1rem; font-weight:700;"
-            ) м. Римская
+            .studio-card__body
+              h3.studio-card__title м. Римская
 
-            p.mb-3(style="font-size:.82rem; line-height:1.45;")
-              | Пентхаус на 27 этаже в БЦ «Golden Gate»
-              br
-              | Бульвар Энтузиастов, 2
-              br
-              | 2 студии
+              p.studio-card__text
+                | Пентхаус на 27 этаже в БЦ «Golden Gate»
+                br
+                | Бульвар Энтузиастов, 2
+                br
+                | 2 студии
 
-            .mt-auto
-              a.d-inline-block.mb-2(
-                href="#"
-                style="background:#fff; color:#d81b90; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Посмотреть фото
+              .studio-card__actions
+                a.studio-card__link.studio-card__link--light(
+                  href="#"
+                ) Посмотреть фото
 
-              br
+                a.studio-card__link.studio-card__link--accent(
+                  href="#"
+                ) Яндекс карты
 
-              a.d-inline-block(
-                href="#"
-                style="background:#d81b90; color:#fff; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Яндекс карты
+        .col-lg-3.col-sm-6
+          article.studio-card.h-100
+            .studio-card__image
+              img.studio-card__photo.studio-card__photo--main(
+                src="/images/right.svg"
+                alt="Студия на Чистых прудах"
+              )
+              img.studio-card__photo.studio-card__photo--hover(
+                src="/images/left.svg"
+                alt="Студия на Чистых прудах, другой ракурс"
+              )
 
-      .col-lg-3.col-sm-6
-        .studio-card.h-100.rounded-3.overflow-hidden(
-          style="background:#f3efed;"
-        )
-          .studio-card__image
-            img.studio-card__photo.studio-card__photo--main(
-              src="/images/right.svg"
-              alt="Студия на Чистых прудах"
-            )
-            img.studio-card__photo.studio-card__photo--hover(
-              src="/images/left.svg"
-              alt="Студия на Чистых прудах, другой ракурс"
-            )
+            .studio-card__body
+              h3.studio-card__title м. Чистые пруды
 
-          .p-3.d-flex.flex-column(style="min-height:230px;")
-            h3.mb-2(
-              style="color:#d81b90; font-size:1rem; font-weight:700;"
-            ) м. Чистые пруды
+              p.studio-card__text
+                | Лофт
+                br
+                | Мясницкая, 13, стр. 20
+                br
+                | 2 студии
 
-            p.mb-3(style="font-size:.82rem; line-height:1.45;")
-              | Лофт
-              br
-              | Мясницкая, 13, стр. 20
-              br
-              | 2 студии
+              .studio-card__actions
+                a.studio-card__link.studio-card__link--light(
+                  href="#"
+                ) Посмотреть фото
 
-            .mt-auto
-              a.d-inline-block.mb-2(
-                href="#"
-                style="background:#fff; color:#d81b90; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Посмотреть фото
+                a.studio-card__link.studio-card__link--accent(
+                  href="#"
+                ) Яндекс карты
 
-              br
+style.
+  .kv-studios {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(46px, 7vw, 82px) 0;
+    color: var(--kv-ink, #1d1916);
+    background:
+      radial-gradient(circle at 14% 18%, rgba(113, 61, 67, .12), transparent 30%),
+      radial-gradient(circle at 88% 80%, rgba(116, 91, 66, .12), transparent 28%),
+      linear-gradient(135deg, #eee5d7 0%, #eadfce 56%, #ddc8b3 100%);
+    font-family: var(--kv-main, Manrope, Arial, sans-serif);
+  }
 
-              a.d-inline-block(
-                href="#"
-                style="background:#d81b90; color:#fff; padding:6px 12px; border-radius:8px; text-decoration:none; font-size:.75rem; font-weight:600;"
-              ) Яндекс карты
+  .kv-studios::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    opacity: .13;
+    background-image:
+      repeating-radial-gradient(
+        circle at 20% 30%,
+        rgba(45, 35, 28, .18) 0,
+        rgba(45, 35, 28, .18) .7px,
+        transparent .8px,
+        transparent 4px
+      );
+    mix-blend-mode: multiply;
+  }
 
-  style.
-    .studio-card__image {
-      position: relative;
-      height: 155px;
-      overflow: hidden;
+  .kv-studios__decor {
+    position: absolute;
+    top: 16px;
+    left: 3%;
+    color: rgba(111, 55, 52, .07);
+    font-family: var(--kv-display, Georgia, "Times New Roman", serif);
+    font-size: clamp(4.8rem, 13vw, 12rem);
+    font-style: italic;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .kv-studios__decor-side {
+    position: absolute;
+    right: 22px;
+    bottom: 104px;
+    color: rgba(111, 55, 52, .12);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    pointer-events: none;
+  }
+
+  .kv-studios__mark {
+    position: absolute;
+    right: 8%;
+    top: 52px;
+    color: rgba(111, 55, 52, .08);
+    font-family: var(--kv-display, Georgia, "Times New Roman", serif);
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-style: italic;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .kv-studios__container {
+    position: relative;
+    z-index: 1;
+    width: min(calc(100% - 44px), 1120px);
+    margin-inline: auto;
+  }
+
+  .kv-studios__intro {
+    max-width: 760px;
+    margin-bottom: 30px;
+  }
+
+  .kv-studios__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    color: var(--kv-muted, #766c62);
+    font-size: .68rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+
+  .kv-studios__eyebrow::before {
+    width: 50px;
+    height: 1px;
+    content: "";
+    background: var(--kv-wine, #713d43);
+  }
+
+  .kv-studios__title {
+    margin: 0;
+    color: var(--kv-ink, #1d1916);
+    font-family: var(--kv-display, Georgia, "Times New Roman", serif);
+    font-size: clamp(3.1rem, 6vw, 6rem);
+    font-weight: 400;
+    line-height: .82;
+    letter-spacing: 0;
+  }
+
+  .kv-studios__title span {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--kv-wine, #713d43);
+    font-style: italic;
+  }
+
+  .kv-studios__lead {
+    max-width: 440px;
+    margin: 24px 0 0;
+    color: #49413b;
+    font-family: var(--kv-display, Georgia, "Times New Roman", serif);
+    font-size: clamp(1.1rem, 2vw, 1.36rem);
+    line-height: 1.5;
+  }
+
+  .kv-studios__board {
+    position: relative;
+    padding: 20px;
+    border: 1px solid rgba(125, 81, 50, .48);
+    border-radius: 10px 8px 12px 9px;
+    background:
+      radial-gradient(ellipse at 18% 16%, rgba(255, 246, 223, .38), transparent 22%),
+      radial-gradient(ellipse at 78% 82%, rgba(135, 88, 52, .18), transparent 32%),
+      repeating-linear-gradient(
+        6deg,
+        rgba(112, 70, 38, .08) 0,
+        rgba(112, 70, 38, .08) 1px,
+        rgba(255, 240, 210, .12) 1px,
+        rgba(255, 240, 210, .12) 8px
+      ),
+      linear-gradient(135deg, #d7a56e 0%, #c99155 34%, #e3bd86 62%, #b87840 100%);
+    box-shadow:
+      0 34px 52px rgba(82, 54, 32, .22),
+      0 10px 0 #8d5a34,
+      inset 0 2px 0 rgba(255, 244, 220, .42),
+      inset 0 -24px 34px rgba(104, 62, 30, .16);
+  }
+
+  .kv-studios__board::after {
+    position: absolute;
+    inset: 12px;
+    content: "";
+    border: 1px solid rgba(255, 210, 155, .14);
+    border-radius: 7px;
+    pointer-events: none;
+  }
+
+  .kv-studios__board .row {
+    position: relative;
+    z-index: 1;
+  }
+
+  .studio-card {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid rgba(255, 220, 170, .24);
+    border-radius: 5px 8px 6px 7px;
+    background: #f8f2e9;
+    box-shadow:
+      inset 0 0 0 7px rgba(96, 44, 31, .06),
+      0 18px 34px rgba(0, 0, 0, .22);
+    transition:
+      transform .25s ease,
+      box-shadow .25s ease;
+  }
+
+  .studio-card::before,
+  .studio-card::after {
+    position: absolute;
+    right: 16px;
+    left: 16px;
+    z-index: 2;
+    height: 1px;
+    content: "";
+    background: rgba(99, 49, 37, .16);
+    pointer-events: none;
+  }
+
+  .studio-card::before {
+    top: 12px;
+  }
+
+  .studio-card::after {
+    bottom: 12px;
+  }
+
+  .studio-card:hover {
+    transform: translateY(-7px) rotate(-.35deg);
+    box-shadow:
+      inset 0 0 0 7px rgba(96, 44, 31, .07),
+      0 28px 44px rgba(0, 0, 0, .28);
+  }
+
+  .studio-card__image {
+    position: relative;
+    height: 172px;
+    overflow: hidden;
+    background: #d9c8b4;
+  }
+
+  .studio-card__image::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+      linear-gradient(180deg, transparent 52%, rgba(29, 25, 22, .28)),
+      rgba(113, 61, 67, .08);
+    pointer-events: none;
+  }
+
+  .studio-card__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(.2) saturate(.82) contrast(1.04);
+    transition:
+      opacity .3s ease,
+      transform .35s ease;
+  }
+
+  .studio-card__photo--main {
+    opacity: 1;
+  }
+
+  .studio-card__photo--hover {
+    opacity: 0;
+  }
+
+  .studio-card:hover .studio-card__photo {
+    transform: scale(1.04);
+  }
+
+  .studio-card:hover .studio-card__photo--main {
+    opacity: 0;
+  }
+
+  .studio-card:hover .studio-card__photo--hover {
+    opacity: 1;
+  }
+
+  .studio-card__badge {
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    right: 14px;
+    padding: 6px 10px;
+    border: 1px solid rgba(248, 242, 233, .48);
+    color: #fff;
+    background: rgba(113, 61, 67, .92);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .studio-card__body {
+    display: flex;
+    flex: 1;
+    min-height: 240px;
+    flex-direction: column;
+    padding: 22px 20px 20px;
+  }
+
+  .studio-card__title {
+    margin: 0 0 14px;
+    color: var(--kv-wine, #713d43);
+    font-family: var(--kv-display, Georgia, "Times New Roman", serif);
+    font-size: 1.55rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.04;
+  }
+
+  .studio-card__text {
+    margin: 0 0 18px;
+    color: #3f332c;
+    font-size: .86rem;
+    line-height: 1.55;
+  }
+
+  .studio-card__actions {
+    display: grid;
+    gap: 9px;
+    margin-top: auto;
+  }
+
+  .studio-card__link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 12px;
+    overflow: hidden;
+    border: 1px solid rgba(113, 61, 67, .3);
+    color: var(--kv-ink, #1d1916);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      color .22s ease,
+      border-color .22s ease,
+      transform .22s ease;
+  }
+
+  .studio-card__link::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: var(--kv-wine, #713d43);
+    transform: translateY(102%);
+    transition: transform .26s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .studio-card__link:hover {
+    color: #fff;
+    border-color: var(--kv-wine, #713d43);
+    transform: translateY(-2px);
+  }
+
+  .studio-card__link:hover::before {
+    transform: translateY(0);
+  }
+
+  .studio-card__link--accent {
+    color: #f8f2e9;
+    border-color: var(--kv-wine, #713d43);
+    background: var(--kv-wine, #713d43);
+  }
+
+  .studio-card__link--accent::after {
+    margin-left: 10px;
+    content: "↗";
+    font-size: .9rem;
+    line-height: 1;
+    transition: transform .22s ease;
+  }
+
+  .studio-card__link--accent:hover::after {
+    transform: translate(3px, -3px);
+  }
+
+  .studio-card__link--light {
+    background: rgba(248, 242, 233, .55);
+  }
+
+  @media (max-width: 991.98px) {
+    .kv-studios__board {
+      padding: 18px;
     }
 
-    .studio-card__photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity .3s ease;
+    .kv-studios__decor-side {
+      right: 10px;
+      font-size: .7rem;
+      letter-spacing: .22em;
     }
 
-    .studio-card__photo--main {
-      opacity: 1;
+    .studio-card__body {
+      min-height: 220px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .kv-studios {
+      padding: 38px 0 52px;
     }
 
-    .studio-card__photo--hover {
-      opacity: 0;
+    .kv-studios__container {
+      width: min(calc(100% - 34px), 1120px);
     }
 
-    .studio-card:hover .studio-card__photo--main {
-      opacity: 0;
+    .kv-studios__title {
+      font-size: 3.3rem;
     }
 
-    .studio-card:hover .studio-card__photo--hover {
-      opacity: 1;
+    .kv-studios__board {
+      padding: 14px;
+      border-radius: 8px;
     }
+
+    .kv-studios__board::after {
+      inset: 9px;
+    }
+
+    .kv-studios__decor {
+      top: 20px;
+      font-size: 4.2rem;
+    }
+
+    .kv-studios__decor-side {
+      display: none;
+    }
+
+    .kv-studios__mark {
+      right: 12px;
+      top: 62px;
+      font-size: 3.8rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .studio-card,
+    .studio-card__photo,
+    .studio-card__link,
+    .studio-card__link::before,
+    .studio-card__link--accent::after {
+      transition: none;
+    }
+  }
