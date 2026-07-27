@@ -1,8 +1,14 @@
-section.hero-apartment
+section#home.hero-apartment
   img.hero-apartment__bg(
-    src="/images/Image Jul 21, 2026, 04_20_18 PM.png"
-    alt="Музыкальная вечеринка"
+    src="/images/hero-music-poster-bg.png"
+    alt="Динамичный фон музыкальной вечеринки"
   )
+
+  span.hero-apartment__noise
+  span.hero-apartment__label.hero-apartment__label--top LIVE SESSION
+  span.hero-apartment__label.hero-apartment__label--side MOSCOW / 2026
+  span.hero-apartment__flower.hero-apartment__flower--pink
+  span.hero-apartment__flower.hero-apartment__flower--orange
 
   a.hero-apartment__logo(
     href="#home"
@@ -12,197 +18,348 @@ section.hero-apartment
     span.hero-apartment__logo-year EST.2024
 
   .container.hero-apartment__inner
-    .row.w-100.justify-content-end
-      .col-lg-7
-        .hero-apartment__content
-          span.hero-apartment__eyebrow 01 / Музыкальная вечеринка
+    .hero-apartment__content
+      span.hero-apartment__eyebrow 01 / Музыкальная вечеринка
 
-          h1.hero-apartment__title Музыкальная вечеринка
+      h1.hero-apartment__title
+        | Музыкальная
+        br
+        span вечеринка
 
-          p.hero-apartment__subtitle ближе к музыке
+      p.hero-apartment__subtitle ближе к музыке
 
-          p.hero-apartment__description
-            | Камерные концерты в уютных лофтах и студиях,
-            br
-            | где между музыкантами и зрителями нет расстояния.
+      p.hero-apartment__description
+        | Камерные концерты в уютных лофтах и студиях, где между музыкантами
+        |  и зрителями нет расстояния.
 
-          span.hero-apartment__age 18+
+      .hero-apartment__facts
+        span.hero-apartment__fact Живой звук
+        span.hero-apartment__fact Лофты и студии
+        span.hero-apartment__fact 18+
 
   .hero-apartment__menu
-    .container(style="max-width:990px;")
-      .d-flex.flex-wrap.gap-2.py-3
-        a.hero-apartment__link.hero-apartment__link--active(
-          href="#prices"
-        ) Цены
+    .container.hero-apartment__menu-inner
+      a.hero-apartment__link.hero-apartment__link--active(
+        href="#prices"
+      ) Цены
 
-        a.hero-apartment__link(
-          href="#games"
-        ) Игры и активности
+      a.hero-apartment__link(
+        href="#games"
+      ) Игры и активности
 
-        a.hero-apartment__link(
-          href="#services"
-        ) Дополнительные услуги
+      a.hero-apartment__link(
+        href="#services"
+      ) Дополнительные услуги
 
-        a.hero-apartment__link(
-          href="#studios"
-        ) Где проводим
+      a.hero-apartment__link(
+        href="#studios"
+      ) Где проводим
 
-        a.hero-apartment__link(
-          href="#gallery"
-        ) Галерея
+      a.hero-apartment__link(
+        href="#gallery"
+      ) Галерея
 
 style.
   .hero-apartment {
     position: relative;
-    min-height: 700px;
+    min-height: 760px;
     overflow: hidden;
+    isolation: isolate;
+    color: #181818;
+    background:
+      radial-gradient(ellipse at 12% 82%, rgba(237, 104, 58, .34), transparent 28%),
+      linear-gradient(135deg, #c8c8c4 0%, #a9aaa6 52%, #d4d2cd 100%);
+    font-family: var(--kv-main, Manrope, Arial, sans-serif);
   }
 
   .hero-apartment__bg {
     position: absolute;
     inset: 0;
+    z-index: -3;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: .9;
+    opacity: .78;
+    filter: saturate(.96) contrast(1.05);
+  }
+
+  .hero-apartment::before,
+  .hero-apartment__noise {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+  }
+
+  .hero-apartment::before {
+    background:
+      linear-gradient(90deg, rgba(255, 250, 244, .72) 0%, rgba(255, 250, 244, .34) 42%, rgba(255, 250, 244, .04) 72%),
+      radial-gradient(ellipse at 77% 18%, rgba(247, 203, 220, .52), transparent 32%),
+      radial-gradient(ellipse at 86% 70%, rgba(237, 104, 58, .38), transparent 24%);
+  }
+
+  .hero-apartment__noise {
+    opacity: .38;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, .18) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, .08) 1px, transparent 1px),
+      repeating-radial-gradient(
+        circle at 24% 28%,
+        rgba(15, 15, 15, .32) 0,
+        rgba(15, 15, 15, .32) .7px,
+        transparent .8px,
+        transparent 4px
+      );
+    background-size: 34px 34px, 34px 34px, 4px 4px;
+    mix-blend-mode: multiply;
+  }
+
+  .hero-apartment__label {
+    position: absolute;
+    z-index: 2;
+    color: rgba(24, 24, 24, .64);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .hero-apartment__label--top {
+    top: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-apartment__label--side {
+    right: 24px;
+    top: 180px;
+    writing-mode: vertical-rl;
+  }
+
+  .hero-apartment__flower {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-apartment__flower::before,
+  .hero-apartment__flower::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .hero-apartment__flower--pink {
+    right: clamp(20px, 8vw, 118px);
+    bottom: 92px;
+    width: clamp(120px, 18vw, 230px);
+    height: clamp(54px, 8vw, 96px);
+    color: #f7cbdc;
+    transform: rotate(15deg);
+  }
+
+  .hero-apartment__flower--pink::before {
+    transform: rotate(62deg);
+  }
+
+  .hero-apartment__flower--pink::after {
+    transform: rotate(-62deg);
+  }
+
+  .hero-apartment__flower--orange {
+    left: -62px;
+    bottom: 112px;
+    width: clamp(150px, 18vw, 250px);
+    height: clamp(64px, 8vw, 102px);
+    color: #ed683a;
+    transform: rotate(-18deg);
+  }
+
+  .hero-apartment__flower--orange::before {
+    transform: rotate(58deg);
+  }
+
+  .hero-apartment__flower--orange::after {
+    transform: rotate(-58deg);
   }
 
   .hero-apartment__logo {
     position: absolute;
     top: 28px;
     left: clamp(18px, 4vw, 54px);
-    z-index: 2;
+    z-index: 3;
     display: inline-block;
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: .78;
+    color: #181818;
+    font-family: var(--kv-main, Manrope, Arial, sans-serif);
+    line-height: .8;
     text-decoration: none;
-    text-shadow: 0 3px 18px rgba(0, 0, 0, .78);
   }
 
   .hero-apartment__logo-main {
     display: block;
-    font-size: clamp(.78rem, 2vw, 1.7rem);
-    font-weight: 400;
-    letter-spacing: .02em;
+    font-size: clamp(.92rem, 2vw, 1.8rem);
+    font-weight: 900;
+    letter-spacing: 0;
   }
 
   .hero-apartment__logo-year {
     display: block;
     margin-top: 4px;
-    margin-left: 69%;
-    font-family: Arial, sans-serif;
-    font-size: clamp(.2rem, .47vw, .34rem);
-    font-weight: 700;
-    letter-spacing: .03em;
+    margin-left: 58%;
+    color: #ed683a;
+    font-size: clamp(.28rem, .56vw, .46rem);
+    font-weight: 900;
+    letter-spacing: .06em;
     white-space: nowrap;
   }
 
   .hero-apartment__inner {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
-    min-height: 620px;
-    max-width: 990px;
+    min-height: 675px;
+    max-width: 1120px;
   }
 
   .hero-apartment__content {
-    padding: 34px;
-    border: 1px solid rgba(255, 255, 255, .18);
-    border-radius: 20px;
-    background: rgba(18, 10, 6, .58);
-    box-shadow: 0 20px 55px rgba(0, 0, 0, .32);
-    backdrop-filter: blur(4px);
-    color: #fff;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+    width: min(100%, 760px);
+    padding-top: 74px;
   }
 
   .hero-apartment__eyebrow {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 14px;
-    color: #f5c8bd;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: .95rem;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: .06em;
+    color: #181818;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .hero-apartment__eyebrow::before {
+    width: 42px;
+    height: 6px;
+    border-radius: 999px;
+    content: "";
+    background: #ed683a;
   }
 
   .hero-apartment__title {
     margin: 0;
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(3.3rem, 7vw, 6.4rem);
-    font-weight: 400;
-    line-height: .95;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, .9);
+    color: #f7cbdc;
+    font-size: clamp(4rem, 9vw, 9.2rem);
+    font-weight: 900;
+    line-height: .8;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-shadow:
+      0 2px 0 rgba(255, 250, 244, .62),
+      0 16px 36px rgba(24, 24, 24, .16);
+  }
+
+  .hero-apartment__title span {
+    color: #fffaf4;
   }
 
   .hero-apartment__subtitle {
-    margin: 8px 0 28px;
-    color: #efb0a3;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.8rem, 3vw, 2.7rem);
-    font-style: italic;
-    line-height: 1.1;
-    text-shadow: 0 3px 16px rgba(0, 0, 0, .85);
+    display: inline-flex;
+    margin: 20px 0 18px;
+    padding: 9px 18px;
+    color: #fffaf4;
+    border-radius: 999px;
+    background: #ed683a;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
   }
 
   .hero-apartment__description {
-    max-width: 500px;
-    margin-bottom: 28px;
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    line-height: 1.8;
+    max-width: 560px;
+    margin: 0;
+    color: #181818;
+    font-size: clamp(.98rem, 1.45vw, 1.16rem);
+    font-weight: 800;
+    line-height: 1.42;
+    text-transform: uppercase;
   }
 
-  .hero-apartment__age {
+  .hero-apartment__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .hero-apartment__fact {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    border: 1px solid rgba(255, 255, 255, .85);
-    border-radius: 50%;
-    background: rgba(0, 0, 0, .18);
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
+    min-height: 36px;
+    padding: 8px 14px;
+    border: 1px solid #181818;
+    border-radius: 999px;
+    background: rgba(255, 250, 244, .76);
+    color: #181818;
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .hero-apartment__fact:last-child {
+    color: #fffaf4;
+    border-color: #ed683a;
+    background: #ed683a;
   }
 
   .hero-apartment__menu {
     position: relative;
-    z-index: 1;
-    border-top: 1px solid rgba(255, 255, 255, .28);
-    background: rgba(15, 9, 6, .62);
-    backdrop-filter: blur(5px);
+    z-index: 3;
+    padding: 0 0 24px;
+  }
+
+  .hero-apartment__menu-inner {
+    display: flex;
+    max-width: 1120px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .hero-apartment__link {
     display: inline-flex;
     align-items: center;
-    min-height: 44px;
+    min-height: 42px;
     padding: 9px 18px;
-    border: 1px solid rgba(255, 255, 255, .4);
-    background: rgba(255, 255, 255, .08);
-    color: #fff;
-    font-size: .8rem;
+    border: 1px solid #181818;
+    border-radius: 999px;
+    background: rgba(255, 250, 244, .82);
+    color: #181818;
+    font-size: .75rem;
+    font-weight: 900;
     letter-spacing: .04em;
     text-decoration: none;
     text-transform: uppercase;
     transition:
       background-color .2s ease,
-      border-color .2s ease;
+      border-color .2s ease,
+      color .2s ease,
+      transform .2s ease;
   }
 
   .hero-apartment__link:hover,
   .hero-apartment__link--active {
-    border-color: #8d4248;
-    background: #8d4248;
-    color: #fff;
+    border-color: #ed683a;
+    background: #ed683a;
+    color: #fffaf4;
+    transform: translateY(-2px);
   }
 
   @media (max-width: 991.98px) {
@@ -210,14 +367,20 @@ style.
       min-height: auto;
     }
 
+    .hero-apartment::before {
+      background:
+        linear-gradient(90deg, rgba(255, 250, 244, .82) 0%, rgba(255, 250, 244, .48) 62%, rgba(255, 250, 244, .1) 100%),
+        radial-gradient(ellipse at 82% 20%, rgba(247, 203, 220, .52), transparent 34%);
+    }
+
     .hero-apartment__inner {
-      min-height: 560px;
-      padding-top: 40px;
-      padding-bottom: 40px;
+      min-height: 640px;
+      padding-top: 56px;
+      padding-bottom: 42px;
     }
 
     .hero-apartment__content {
-      padding: 26px;
+      padding-top: 58px;
     }
   }
 
@@ -226,34 +389,46 @@ style.
       top: 18px;
     }
 
-    .hero-apartment__logo-main {
-      font-size: .8rem;
-    }
-
-    .hero-apartment__logo-year {
-      font-size: .2rem;
+    .hero-apartment__label--top,
+    .hero-apartment__label--side {
+      display: none;
     }
 
     .hero-apartment__inner {
-      min-height: 520px;
+      min-height: 570px;
+      padding-top: 48px;
     }
 
     .hero-apartment__content {
-      padding: 22px;
-      border-radius: 16px;
+      padding-top: 40px;
     }
 
     .hero-apartment__title {
-      font-size: 3.2rem;
+      font-size: clamp(3.25rem, 17vw, 5.6rem);
     }
 
     .hero-apartment__description {
-      font-size: 1rem;
-      line-height: 1.6;
+      max-width: 94%;
+      font-size: .88rem;
+    }
+
+    .hero-apartment__flower--orange {
+      left: -84px;
+      bottom: 118px;
+    }
+
+    .hero-apartment__flower--pink {
+      right: -32px;
+      bottom: 72px;
+    }
+
+    .hero-apartment__menu {
+      padding-bottom: 16px;
     }
 
     .hero-apartment__link {
+      min-height: 38px;
       padding: 8px 12px;
-      font-size: .72rem;
+      font-size: .66rem;
     }
   }

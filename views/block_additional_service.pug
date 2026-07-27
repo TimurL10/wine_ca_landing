@@ -1,78 +1,431 @@
-section#services.mt-5
-  .container(style="max-width:990px;")
-    h2.mb-2(
-      style="font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:#3f3a3c;"
-    ) 04. Дополнительные услуги
+section#services.addon-services
+  span.addon-services__grain
+  span.addon-services__watermark EXTRA
+  span.addon-services__shape.addon-services__shape--blue
+  span.addon-services__shape.addon-services__shape--pink
 
-    p.mb-4(style="font-size:.95rem;")
-      | В стоимость не включён НДС 22%
+  .addon-services__container
+    .addon-services__header
+      .addon-services__label
+        span 06
+        | Дополнительные услуги
 
-    .row.g-0.rounded-3.overflow-hidden.mb-4(
-      style="background:#f3efed; min-height:180px;"
-    )
-      .col-md-5
-        .p-3.h-100.d-flex.flex-column.justify-content-center
-          h3.mb-0(
-            style="color:#d81b90; font-size:1.4rem; font-weight:700;"
-          ) Фотозона
+      h2.addon-services__title
+        | Добавьте
+        br
+        span детали вечера
 
-          h4.mb-3(
-            style="color:#d81b90; font-size:1.3rem; font-style:italic; font-weight:400;"
-          ) из пайеток
+      p.addon-services__lead В стоимость не включён НДС 22%. Можно собрать только нужные опции: фото, видео, ведущий, музыка или отдельный визуальный акцент.
 
-          p.mb-2(style="font-size:.82rem;")
-            | Стильное решение и яркий акцент
-            br
-            | для любой вечеринки
+    .addon-services__feature
+      .addon-services__feature-copy
+        span.addon-services__tag visual accent
 
-          p.mb-1(style="font-size:.82rem;")
-            | Аренда фотозоны — 24 000 ₽
+        h3
+          | Фотозона
+          span из пайеток
 
-          p.mb-0(style="font-size:.82rem;")
-            | Оформление фотозоны шарами — 30 000 ₽
+        p Стильное решение и яркий акцент для любой вечеринки.
 
-      .col-md-7
-        img.w-100.h-100.object-fit-cover(
-          src="/images/right.svg"
-          alt="Фотозона"
-          style="min-height:180px; max-height:180px;"
+        .addon-services__feature-prices
+          .addon-services__feature-price
+            span Аренда фотозоны
+            strong 24 000 ₽
+
+          .addon-services__feature-price
+            span Оформление шарами
+            strong 30 000 ₽
+
+      .addon-services__feature-media
+        img(
+          src="/images/sequin-photo-zone.png"
+          alt="Фотозона из пайеток"
+          loading="lazy"
         )
 
-    .row.g-4
-      .col-md-6
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Сторисмейкер
-          span(style="font-size:.9rem;") 35 000 ₽ за 4 часа
+    .addon-services__list
+      .addon-services__item
+        span Сторисмейкер
+        strong 35 000 ₽ за 4 часа
 
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Фотограф / Топ-фотограф
-          span(style="font-size:.9rem;") 35 000 ₽ / 45 000 ₽ за 4 часа
+      .addon-services__item
+        span Фотограф / Топ-фотограф
+        strong 35 000 ₽ / 45 000 ₽ за 4 часа
 
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Видеоклип вашей вечеринки
-          span(style="font-size:.9rem;") 40 000 ₽ за 3 часа
+      .addon-services__item
+        span Видеоклип вашей вечеринки
+        strong 40 000 ₽ за 3 часа
 
-      .col-md-6
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Ведущий
-          span(style="font-size:.9rem;") от 60 000 ₽
+      .addon-services__item
+        span Ведущий
+        strong от 60 000 ₽
 
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Караоке
-          span(style="font-size:.9rem;") 38 000 ₽ за 2 часа
+      .addon-services__item
+        span Караоке
+        strong 38 000 ₽ за 2 часа
 
-        .d-flex.justify-content-between.align-items-center.py-2(
-          style="border-bottom:1px solid #efb7d6;"
-        )
-          strong Диджей
-          span(style="font-size:.9rem;") 45 000 ₽ за 4 часа
+      .addon-services__item
+        span Диджей
+        strong 45 000 ₽ за 4 часа
+
+style.
+  .addon-services {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(64px, 9vw, 118px) 0;
+    color: #181818;
+    background:
+      radial-gradient(ellipse at 12% 20%, rgba(118, 199, 232, .28), transparent 34%),
+      radial-gradient(ellipse at 84% 78%, rgba(247, 203, 220, .3), transparent 34%),
+      linear-gradient(135deg, rgba(255, 250, 244, .96), rgba(238, 241, 240, .9) 52%, rgba(255, 250, 244, .94));
+    font-family: var(--kv-main, Manrope, Arial, sans-serif);
+    isolation: isolate;
+  }
+
+  .addon-services__grain {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .12;
+    background-image:
+      linear-gradient(rgba(24, 24, 24, .12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24, 24, 24, .1) 1px, transparent 1px),
+      repeating-radial-gradient(
+        circle at 40% 40%,
+        rgba(24, 24, 24, .24) 0,
+        rgba(24, 24, 24, .24) .6px,
+        transparent .8px,
+        transparent 5px
+      );
+    background-size: 38px 38px, 38px 38px, 5px 5px;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+
+  .addon-services__watermark {
+    position: absolute;
+    top: 22px;
+    right: 4%;
+    z-index: 0;
+    color: rgba(24, 24, 24, .045);
+    font-size: clamp(4.8rem, 15vw, 13rem);
+    font-weight: 900;
+    line-height: .8;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  .addon-services__shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .addon-services__shape--blue {
+    left: -72px;
+    top: 110px;
+    width: clamp(160px, 24vw, 320px);
+    height: clamp(86px, 12vw, 160px);
+    border: 1px solid rgba(24, 24, 24, .12);
+    border-radius: 50%;
+    background: rgba(118, 199, 232, .36);
+    transform: rotate(-24deg);
+  }
+
+  .addon-services__shape--pink {
+    right: 10%;
+    bottom: 58px;
+    width: clamp(120px, 16vw, 220px);
+    height: clamp(120px, 16vw, 220px);
+    border-radius: 48% 52% 42% 58%;
+    background: rgba(247, 203, 220, .42);
+    transform: rotate(18deg);
+  }
+
+  .addon-services__container {
+    position: relative;
+    z-index: 1;
+    width: min(calc(100% - 44px), 1120px);
+    margin-inline: auto;
+  }
+
+  .addon-services__header {
+    display: grid;
+    grid-template-columns: minmax(160px, .26fr) minmax(0, .78fr) minmax(250px, .44fr);
+    gap: clamp(18px, 3vw, 34px);
+    align-items: end;
+    margin-bottom: clamp(28px, 5vw, 58px);
+  }
+
+  .addon-services__label {
+    display: flex;
+    min-height: 148px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid rgba(24, 24, 24, .12);
+    background: rgba(255, 255, 255, .42);
+    backdrop-filter: blur(12px);
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .addon-services__label span {
+    color: #76c7e8;
+    font-size: clamp(2.8rem, 5.8vw, 5rem);
+    line-height: .82;
+  }
+
+  .addon-services__title {
+    margin: 0;
+    color: #181818;
+    font-size: clamp(3rem, 7.2vw, 7.1rem);
+    font-weight: 900;
+    line-height: .82;
+    text-transform: uppercase;
+  }
+
+  .addon-services__title span {
+    color: #ed683a;
+  }
+
+  .addon-services__lead {
+    margin: 0;
+    padding: 24px 0 4px;
+    border-top: 1px solid rgba(24, 24, 24, .22);
+    color: rgba(24, 24, 24, .78);
+    font-size: .92rem;
+    font-weight: 800;
+    line-height: 1.52;
+    text-transform: uppercase;
+  }
+
+  .addon-services__feature {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: minmax(0, .9fr) minmax(280px, .72fr);
+    gap: clamp(18px, 3vw, 34px);
+    align-items: stretch;
+    margin-bottom: clamp(26px, 5vw, 52px);
+    padding: clamp(18px, 3vw, 30px);
+    border: 1px solid rgba(24, 24, 24, .1);
+    background: rgba(255, 255, 255, .36);
+    box-shadow: 0 28px 70px rgba(24, 24, 24, .08);
+    backdrop-filter: blur(16px);
+  }
+
+  .addon-services__feature-copy {
+    display: flex;
+    min-height: 310px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(10px, 2vw, 22px);
+  }
+
+  .addon-services__tag {
+    width: fit-content;
+    padding: 9px 13px;
+    border: 1px solid rgba(24, 24, 24, .18);
+    border-radius: 999px;
+    background: rgba(118, 199, 232, .34);
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .addon-services__feature h3 {
+    margin: 22px 0;
+    color: #181818;
+    font-size: clamp(2.6rem, 6vw, 5.7rem);
+    font-weight: 900;
+    line-height: .82;
+    text-transform: uppercase;
+  }
+
+  .addon-services__feature h3 span {
+    display: block;
+    color: #f2a9c7;
+    font-style: italic;
+    font-weight: 800;
+    text-transform: none;
+  }
+
+  .addon-services__feature-copy p {
+    max-width: 480px;
+    margin: 0;
+    color: rgba(24, 24, 24, .74);
+    font-size: .95rem;
+    font-weight: 800;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .addon-services__feature-prices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .addon-services__feature-price {
+    padding: 16px;
+    border: 1px solid rgba(24, 24, 24, .12);
+    background: rgba(255, 250, 244, .62);
+  }
+
+  .addon-services__feature-price span {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(24, 24, 24, .62);
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  .addon-services__feature-price strong {
+    display: block;
+    color: #181818;
+    font-size: clamp(1.28rem, 2.3vw, 1.85rem);
+    font-weight: 900;
+    line-height: .95;
+  }
+
+  .addon-services__feature-media {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    border: 1px solid rgba(24, 24, 24, .1);
+    background:
+      radial-gradient(ellipse at 24% 20%, rgba(247, 203, 220, .5), transparent 30%),
+      rgba(255, 250, 244, .62);
+  }
+
+  .addon-services__feature-media::after {
+    position: absolute;
+    inset: 18px;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, .58);
+    pointer-events: none;
+  }
+
+  .addon-services__feature-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    opacity: .84;
+    filter: saturate(.92) contrast(.96);
+  }
+
+  .addon-services__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .addon-services__item {
+    display: flex;
+    min-height: 132px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    border: 1px solid rgba(24, 24, 24, .1);
+    background: rgba(255, 255, 255, .38);
+    box-shadow: 0 18px 42px rgba(24, 24, 24, .06);
+    backdrop-filter: blur(12px);
+    transition:
+      background-color .2s ease,
+      transform .2s ease,
+      box-shadow .2s ease;
+  }
+
+  .addon-services__item:hover {
+    background: rgba(255, 250, 244, .72);
+    box-shadow: 0 24px 54px rgba(24, 24, 24, .1);
+    transform: translateY(-4px);
+  }
+
+  .addon-services__item span {
+    color: #181818;
+    font-size: .9rem;
+    font-weight: 900;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  .addon-services__item strong {
+    color: #4aaed6;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  @media (max-width: 991.98px) {
+    .addon-services__header,
+    .addon-services__feature,
+    .addon-services__list {
+      grid-template-columns: 1fr;
+    }
+
+    .addon-services__feature-copy {
+      min-height: auto;
+    }
+
+    .addon-services__feature-media {
+      min-height: 260px;
+    }
+
+    .addon-services__feature-media img {
+      min-height: 260px;
+    }
+
+    .addon-services__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .addon-services {
+      padding: 46px 0 64px;
+    }
+
+    .addon-services__container {
+      width: min(calc(100% - 34px), 1120px);
+    }
+
+    .addon-services__header {
+      margin-bottom: 26px;
+    }
+
+    .addon-services__title {
+      font-size: clamp(2.6rem, 14vw, 4.25rem);
+    }
+
+    .addon-services__lead {
+      padding-top: 18px;
+    }
+
+    .addon-services__feature {
+      padding: 16px;
+    }
+
+    .addon-services__feature-prices,
+    .addon-services__list {
+      grid-template-columns: 1fr;
+    }
+
+    .addon-services__item {
+      min-height: 112px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .addon-services__item {
+      transition: none;
+    }
+  }

@@ -1,102 +1,94 @@
 section#prices.wine-prices
+  span.wine-prices__grain
   span.wine-prices__decor PACKAGES
-  span.wine-prices__decor-side WINE CASINO
-  span.wine-prices__mark 04
+  span.wine-prices__decor-side PRICE / MUSIC PARTY
+  span.wine-prices__shape.wine-prices__shape--blue
+  span.wine-prices__shape.wine-prices__shape--orange
 
-  .container.position-relative.py-5(
-    style="max-width:1100px; z-index:1;"
-  )
+  .wine-prices__container
     .wine-prices__intro
-      span.wine-prices__eyebrow 04 / Пакетные предложения
+      .wine-prices__headline
+        span.wine-prices__eyebrow 04 / Пакетные предложения
 
-      h2.wine-prices__title
-        | Три сценария
-        br
-        span музыкальной вечеринки
+        h2.wine-prices__title
+          | Три сценария
+          br
+          span музыкальной вечеринки
 
-      .row.g-3
-        .col-md-6
-          .wine-prices__note
-            span.wine-prices__note-sign ✦
-            p Проведем в студиях EventyOn и на любых выездных площадках
+      .wine-prices__summary
+        .wine-prices__summary-item
+          span 2-160
+          p участников
 
-        .col-md-6
-          .wine-prices__note
-            span.wine-prices__note-sign ✦
-            p Возможное количество участников: от 2-х до 160 человек
+        .wine-prices__summary-item
+          span студии
+          p EventyOn или выездная площадка
 
     .wine-prices__board
-      .wine-prices__rail
-        span silver
-        span gold
-        span platinum
+      .wine-prices__board-head
+        span Пакеты
+        span от 9 900 ₽
+        span за человека
 
-      .row.g-3.align-items-stretch
-        .col-lg-4
-          article.wine-prices__card.wine-prices__card--silver
-            .wine-prices__label
-              span.wine-prices__tier Silver
-              span.wine-prices__price 9 900 ₽
-              span.wine-prices__person за человека
+      .wine-prices__cards
+        article.wine-prices__card.wine-prices__card--silver
+          .wine-prices__label
+            span.wine-prices__tier Silver
+            span.wine-prices__price 9 900 ₽
+            span.wine-prices__person за человека
 
-            .wine-prices__divider
+          ul.wine-prices__list
+            li Ведущий
+            li Диджей
+            li Музыкальная программа и артисты
 
-            ul.wine-prices__list
-              li Ведущий
-              li Диджей
-              li Музыкальная программа и артисты
+          button.wine-prices__button(
+            type="button"
+            data-price-modal-open
+            data-package="Silver"
+          ) Посмотреть программу
 
-            button.wine-prices__button(
-              type="button"
-              data-price-modal-open
-              data-package="Silver"
-            ) Посмотреть программу
+        article.wine-prices__card.wine-prices__card--gold
+          span.wine-prices__tag Оптимальный
 
-        .col-lg-4
-          article.wine-prices__card.wine-prices__card--gold
-            .wine-prices__label
-              span.wine-prices__tier Gold
-              span.wine-prices__price 10 900 ₽
-              span.wine-prices__person за человека
+          .wine-prices__label
+            span.wine-prices__tier Gold
+            span.wine-prices__price 10 900 ₽
+            span.wine-prices__person за человека
 
-            .wine-prices__divider
+          ul.wine-prices__list
+            li Ведущий
+            li Диджей
+            li Музыкальная программа и артисты
+            li Еда, напитки
+            li Площадка
 
-            ul.wine-prices__list
-              li Ведущий
-              li Диджей
-              li Музыкальная программа и артисты
-              li Еда, напитки
-              li Площадка
+          button.wine-prices__button(
+            type="button"
+            data-price-modal-open
+            data-package="Gold"
+          ) Посмотреть программу
 
-            button.wine-prices__button(
-              type="button"
-              data-price-modal-open
-              data-package="Gold"
-            ) Посмотреть программу
+        article.wine-prices__card.wine-prices__card--platinum
+          .wine-prices__label
+            span.wine-prices__tier Platinum
+            span.wine-prices__price 11 900 ₽
+            span.wine-prices__person за человека
 
-        .col-lg-4
-          article.wine-prices__card.wine-prices__card--platinum
-            .wine-prices__label
-              span.wine-prices__tier Platinum
-              span.wine-prices__price 11 900 ₽
-              span.wine-prices__person за человека
+          ul.wine-prices__list
+            li Ведущий
+            li Диджей
+            li Музыкальная программа и артисты
+            li Еда, напитки
+            li Площадка
+            li Фотограф
+            li Видеоограф
 
-            .wine-prices__divider
-
-            ul.wine-prices__list
-              li Ведущий
-              li Диджей
-              li Музыкальная программа и артисты
-              li Еда, напитки
-              li Площадка
-              li Фотограф
-              li Видеоограф
-
-            button.wine-prices__button(
-              type="button"
-              data-price-modal-open
-              data-package="Platinum"
-            ) Посмотреть программу
+          button.wine-prices__button(
+            type="button"
+            data-price-modal-open
+            data-package="Platinum"
+          ) Посмотреть программу
 
   .wine-prices-modal(
     data-price-modal
@@ -107,79 +99,62 @@ section#prices.wine-prices
       aria-modal="true"
       aria-labelledby="price-modal-title"
     )
+      button.wine-prices-modal__close(
+        type="button"
+        aria-label="Закрыть программу"
+        data-price-modal-close
+      ) ×
+
       span.wine-prices-modal__eyebrow(data-price-modal-package) Пакет
 
-      h3#wine-prices-modal-title.wine-prices-modal__title
-        | 
+      h3#wine-prices-modal-title.wine-prices-modal__title Программа вечера
 
-      .wine-prices-modal__program
-        h4 Программа:
-
-        p
-          strong 30 минут
-          |  - сбор гостей и начало вечеринки
-          br
-          | гостей встречает ведущий / велкам активность от ведущего
-
-        p
-          strong 5 минут
-          |  - открытие мероприятия
-          br
-          | знакомство с гостями
-
-        p
-          strong 10 минут
-          |  - музыкальный перерыв
-
-        p
-          strong 40 минут
-          |  - угадай мелодию
-
-        p
-          strong 20 минут
-          |  - танцевальный перерыв
-
-        p
-          strong 60 минут
-          |  - выступление музыкантов / совместное пение
-
-        p.mb-0
-          strong 30 минут
-          |  - надо подумать
+      .wine-prices-modal__program(data-price-modal-program)
 
 style.
   .wine-prices {
     position: relative;
     overflow: hidden;
+    padding: clamp(54px, 8vw, 98px) 0;
+    color: #181818;
     background:
-      radial-gradient(circle at 14% 18%, rgba(141, 66, 72, .18), transparent 28%),
-      linear-gradient(145deg, #f4eadc 0%, #e9dbc8 48%, #d9c1a8 100%);
-    font-family: Georgia, "Times New Roman", serif;
+      radial-gradient(ellipse at 16% 16%, rgba(118, 199, 232, .5), transparent 30%),
+      radial-gradient(ellipse at 90% 76%, rgba(247, 203, 220, .46), transparent 32%),
+      linear-gradient(135deg, #d8d9d5 0%, #b7b8b4 48%, #d1cfca 100%);
+    font-family: var(--kv-main, Manrope, Arial, sans-serif);
+    isolation: isolate;
   }
 
-  .wine-prices::before {
-    content: "";
+  .wine-prices__grain {
     position: absolute;
     inset: 0;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        rgba(88, 45, 37, .045) 0,
-        rgba(88, 45, 37, .045) 1px,
-        transparent 1px,
-        transparent 22px
+    z-index: -1;
+    opacity: .34;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, .2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, .08) 1px, transparent 1px),
+      repeating-radial-gradient(
+        circle at 20% 26%,
+        rgba(15, 15, 15, .32) 0,
+        rgba(15, 15, 15, .32) .7px,
+        transparent .8px,
+        transparent 4px
       );
+    background-size: 34px 34px, 34px 34px, 4px 4px;
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 
   .wine-prices__decor {
     position: absolute;
-    top: 12px;
+    top: 18px;
     left: 3%;
-    color: rgba(111, 55, 52, .07);
-    font-size: clamp(4.6rem, 12vw, 11rem);
-    font-style: italic;
-    line-height: 1;
+    z-index: 0;
+    color: rgba(118, 199, 232, .58);
+    font-size: clamp(4.2rem, 11vw, 10rem);
+    font-weight: 900;
+    line-height: .9;
+    text-transform: uppercase;
     white-space: nowrap;
     pointer-events: none;
   }
@@ -187,246 +162,339 @@ style.
   .wine-prices__decor-side {
     position: absolute;
     right: 22px;
-    bottom: 86px;
-    color: rgba(111, 55, 52, .13);
-    font-family: Arial, sans-serif;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .32em;
+    bottom: 94px;
+    z-index: 1;
+    color: rgba(24, 24, 24, .58);
+    font-size: .76rem;
+    font-weight: 900;
+    letter-spacing: .2em;
     text-transform: uppercase;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
     pointer-events: none;
   }
 
-  .wine-prices__mark {
+  .wine-prices__shape {
     position: absolute;
-    right: 9%;
-    top: 46px;
-    color: rgba(111, 55, 52, .09);
-    font-size: clamp(4rem, 9vw, 8rem);
-    font-style: italic;
-    line-height: 1;
+    z-index: 0;
     pointer-events: none;
+  }
+
+  .wine-prices__shape--blue {
+    right: 7%;
+    top: 72px;
+    width: clamp(120px, 18vw, 230px);
+    height: clamp(120px, 18vw, 230px);
+    border-radius: 50%;
+    background: #76c7e8;
+    transform: rotate(12deg);
+  }
+
+  .wine-prices__shape--orange {
+    left: -70px;
+    bottom: 76px;
+    width: clamp(160px, 23vw, 290px);
+    height: clamp(70px, 10vw, 128px);
+    border-radius: 50%;
+    background: #ed683a;
+    transform: rotate(-18deg);
+  }
+
+  .wine-prices__container {
+    position: relative;
+    z-index: 1;
+    width: min(calc(100% - 44px), 1120px);
+    margin-inline: auto;
   }
 
   .wine-prices__intro {
-    max-width: 900px;
-    margin-bottom: 30px;
+    display: grid;
+    align-items: end;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, .42fr);
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .wine-prices__headline {
+    padding: clamp(26px, 4vw, 44px);
+    background: rgba(255, 250, 244, .88);
+    box-shadow: 0 24px 56px rgba(24, 24, 24, .14);
   }
 
   .wine-prices__eyebrow {
-    display: block;
-    margin-bottom: 12px;
-    color: #8d4248;
-    font-size: .72rem;
-    font-style: italic;
-    font-weight: 700;
-    letter-spacing: .13em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 13px;
+    color: #181818;
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .04em;
     text-transform: uppercase;
   }
 
+  .wine-prices__eyebrow::before {
+    width: 40px;
+    height: 6px;
+    border-radius: 999px;
+    content: "";
+    background: #76c7e8;
+  }
+
   .wine-prices__title {
-    margin-bottom: 22px;
-    color: #2d150f;
-    font-size: clamp(2.6rem, 5vw, 4.7rem);
-    font-weight: 400;
-    line-height: .96;
+    margin: 0;
+    color: #181818;
+    font-size: clamp(2.9rem, 6.7vw, 6.4rem);
+    font-weight: 900;
+    line-height: .82;
+    text-transform: uppercase;
   }
 
   .wine-prices__title span {
-    color: #8d4248;
-    font-style: italic;
+    color: #76c7e8;
+    text-shadow: 0 2px 0 rgba(237, 104, 58, .2);
   }
 
-  .wine-prices__note {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    min-height: 100%;
-    padding: 15px 16px;
-    border: 1px solid rgba(82, 39, 30, .2);
-    border-radius: 7px;
-    background: rgba(255, 248, 236, .42);
+  .wine-prices__summary {
+    display: grid;
+    gap: 10px;
   }
 
-  .wine-prices__note-sign {
-    flex: 0 0 auto;
-    color: #8d4248;
-    font-size: 1.15rem;
-    line-height: 1.2;
+  .wine-prices__summary-item {
+    min-height: 128px;
+    padding: 18px;
+    background: #181818;
+    color: #fffaf4;
+    box-shadow: 0 22px 44px rgba(24, 24, 24, .16);
   }
 
-  .wine-prices__note p {
+  .wine-prices__summary-item:last-child {
+    color: #181818;
+    background: #76c7e8;
+  }
+
+  .wine-prices__summary-item span {
+    display: block;
+    margin-bottom: 12px;
+    font-size: clamp(1.55rem, 3vw, 2.5rem);
+    font-weight: 900;
+    line-height: .9;
+    text-transform: uppercase;
+  }
+
+  .wine-prices__summary-item p {
     margin: 0;
-    color: #4a2b22;
-    font-family: Arial, sans-serif;
-    font-size: .92rem;
-    line-height: 1.55;
+    font-size: .76rem;
+    font-weight: 900;
+    line-height: 1.35;
+    text-transform: uppercase;
   }
 
   .wine-prices__board {
     position: relative;
-    padding: 30px;
-    border: 1px solid rgba(125, 81, 50, .48);
-    border-radius: 10px 8px 12px 9px;
+    overflow: hidden;
+    padding: clamp(14px, 2.6vw, 26px);
     background:
-      radial-gradient(ellipse at 18% 16%, rgba(255, 246, 223, .38), transparent 22%),
-      radial-gradient(ellipse at 78% 82%, rgba(135, 88, 52, .18), transparent 32%),
-      repeating-linear-gradient(
-        7deg,
-        rgba(112, 70, 38, .08) 0,
-        rgba(112, 70, 38, .08) 1px,
-        rgba(255, 240, 210, .12) 1px,
-        rgba(255, 240, 210, .12) 8px
-      ),
-      linear-gradient(135deg, #d7a56e 0%, #c99155 34%, #e3bd86 62%, #b87840 100%);
-    box-shadow:
-      0 34px 52px rgba(82, 54, 32, .22),
-      0 10px 0 #8d5a34,
-      inset 0 2px 0 rgba(255, 244, 220, .42),
-      inset 0 -24px 34px rgba(104, 62, 30, .16);
+      radial-gradient(ellipse at 12% 24%, rgba(118, 199, 232, .84), transparent 26%),
+      radial-gradient(ellipse at 96% 78%, rgba(237, 104, 58, .72), transparent 24%),
+      linear-gradient(180deg, rgba(255, 250, 244, .84), rgba(255, 250, 244, .72));
+    box-shadow: 0 30px 68px rgba(24, 24, 24, .16);
   }
 
   .wine-prices__board::after {
-    content: "";
     position: absolute;
-    inset: 14px;
-    border: 1px solid rgba(255, 244, 220, .26);
-    border-radius: 7px;
+    right: 20%;
+    bottom: -96px;
+    width: 230px;
+    height: 360px;
+    content: "";
+    border-radius: 50%;
+    background: #f7cbdc;
+    transform: rotate(24deg);
     pointer-events: none;
   }
 
-  .wine-prices__rail {
+  .wine-prices__board-head {
     position: relative;
     z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 18px;
-    border-bottom: 1px solid rgba(82, 50, 28, .18);
-    color: rgba(72, 43, 22, .58);
-    font-size: .68rem;
-    letter-spacing: .24em;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #181818;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
-  .wine-prices__rail span {
-    padding-bottom: 10px;
+  .wine-prices__board-head span {
+    padding: 10px 14px;
+    border: 1px solid #181818;
+    border-radius: 999px;
+    background: rgba(255, 250, 244, .74);
   }
 
-  .wine-prices__board .row {
+  .wine-prices__cards {
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
   }
 
   .wine-prices__card {
     position: relative;
     display: flex;
+    min-height: 440px;
+    overflow: hidden;
     flex-direction: column;
-    height: 100%;
-    min-height: 430px;
-    padding: 26px 24px 24px;
-    border: 1px solid rgba(255, 220, 170, .24);
-    border-radius: 5px 8px 6px 7px;
-    background:
-      linear-gradient(180deg, rgba(255, 250, 235, .97), rgba(238, 217, 190, .95)),
-      #f5ead9;
-    box-shadow:
-      inset 0 0 0 7px rgba(96, 44, 31, .06),
-      0 18px 34px rgba(0, 0, 0, .22);
-    transition: transform .25s ease, box-shadow .25s ease;
+    padding: 24px;
+    background: #fffaf4;
+    box-shadow: 0 20px 40px rgba(24, 24, 24, .14);
+    transition:
+      transform .22s ease,
+      box-shadow .22s ease;
   }
 
-  .wine-prices__card::before,
   .wine-prices__card::after {
-    content: "";
     position: absolute;
-    left: 22px;
-    right: 22px;
-    height: 1px;
-    background: rgba(99, 49, 37, .18);
+    right: -46px;
+    bottom: -42px;
+    width: 136px;
+    height: 136px;
+    content: "";
+    border-radius: 50%;
+    background: #76c7e8;
   }
 
-  .wine-prices__card::before {
-    top: 14px;
-  }
-
-  .wine-prices__card::after {
-    bottom: 14px;
-  }
-
-  .wine-prices__card:hover {
-    transform: translateY(-8px) rotate(-.35deg);
-    box-shadow:
-      inset 0 0 0 7px rgba(96, 44, 31, .07),
-      0 28px 44px rgba(0, 0, 0, .28);
+  .wine-prices__card--silver {
+    margin-top: 34px;
   }
 
   .wine-prices__card--gold {
-    background:
-      linear-gradient(180deg, rgba(255, 249, 226, .98), rgba(232, 204, 143, .96)),
-      #f0db9c;
+    min-height: 482px;
+    background: #181818;
+    color: #fffaf4;
+  }
+
+  .wine-prices__card--gold::after {
+    background: #ed683a;
   }
 
   .wine-prices__card--platinum {
-    background:
-      linear-gradient(180deg, rgba(248, 250, 247, .98), rgba(207, 220, 215, .96)),
-      #e2ebe6;
+    margin-top: 18px;
+  }
+
+  .wine-prices__card--platinum::after {
+    background: #f7cbdc;
+  }
+
+  .wine-prices__card:hover {
+    transform: translateY(-7px) rotate(-.35deg);
+    box-shadow: 0 30px 54px rgba(24, 24, 24, .2);
+  }
+
+  .wine-prices__tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 1;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #76c7e8;
+    color: #181818;
+    font-size: .62rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    text-transform: uppercase;
   }
 
   .wine-prices__label {
-    text-align: center;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(24, 24, 24, .18);
+  }
+
+  .wine-prices__card--gold .wine-prices__label {
+    border-bottom-color: rgba(255, 250, 244, .24);
   }
 
   .wine-prices__tier {
     display: block;
-    color: #6e2f35;
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    font-style: italic;
-    line-height: 1;
+    max-width: 72%;
+    color: inherit;
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    font-weight: 900;
+    line-height: .82;
+    text-transform: uppercase;
   }
 
   .wine-prices__price {
     display: block;
-    margin-top: 16px;
-    color: #24100a;
-    font-family: Arial, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 800;
-    line-height: 1.1;
+    margin-top: 18px;
+    color: #ed683a;
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .wine-prices__card--gold .wine-prices__price {
+    color: #76c7e8;
   }
 
   .wine-prices__person {
     display: block;
-    margin-top: 4px;
-    color: #7b5a4c;
-    font-family: Arial, sans-serif;
-    font-size: .74rem;
-    font-weight: 700;
-    letter-spacing: .12em;
+    margin-top: 6px;
+    color: rgba(24, 24, 24, .62);
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
-  .wine-prices__divider {
-    width: 74px;
-    height: 74px;
-    margin: 24px auto 20px;
-    border: 1px solid rgba(110, 47, 53, .32);
-    border-radius: 50%;
-    background:
-      radial-gradient(circle, rgba(110, 47, 53, .16) 0 4px, transparent 5px),
-      linear-gradient(90deg, transparent 48%, rgba(110, 47, 53, .28) 49%, rgba(110, 47, 53, .28) 51%, transparent 52%),
-      linear-gradient(0deg, transparent 48%, rgba(110, 47, 53, .28) 49%, rgba(110, 47, 53, .28) 51%, transparent 52%);
+  .wine-prices__card--gold .wine-prices__person {
+    color: rgba(255, 250, 244, .66);
   }
 
   .wine-prices__list {
-    margin: 0;
+    position: relative;
+    z-index: 1;
+    margin: 18px 0 26px;
     padding: 0;
     list-style: none;
-    color: #44251d;
-    font-family: Arial, sans-serif;
-    font-size: .92rem;
-    line-height: 1.5;
+    color: inherit;
+    font-size: .84rem;
+    font-weight: 800;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .wine-prices__list li {
+    position: relative;
+    padding: 10px 0 10px 24px;
+    border-bottom: 1px solid rgba(24, 24, 24, .12);
+  }
+
+  .wine-prices__card--gold .wine-prices__list li {
+    border-bottom-color: rgba(255, 250, 244, .16);
+  }
+
+  .wine-prices__list li::before {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    content: "";
+    border: 2px solid #76c7e8;
+    border-radius: 50%;
+    background: #fffaf4;
+  }
+
+  .wine-prices__card--gold .wine-prices__list li::before {
+    background: #181818;
   }
 
   .wine-prices__button {
@@ -439,43 +507,33 @@ style.
     min-height: 44px;
     margin-top: auto;
     padding: 10px 16px;
-    border: 1px solid #8d4248;
-    background: #8d4248;
-    color: #fff8ec;
-    font-family: Arial, sans-serif;
-    font-size: .74rem;
-    font-weight: 800;
-    letter-spacing: .12em;
+    border: 1px solid #181818;
+    border-radius: 999px;
+    background: rgba(255, 250, 244, .82);
+    color: #181818;
+    font-family: inherit;
+    font-size: .72rem;
+    font-weight: 900;
+    letter-spacing: .05em;
     text-transform: uppercase;
     cursor: pointer;
     transition:
       background-color .2s ease,
+      border-color .2s ease,
       color .2s ease,
       transform .2s ease;
   }
 
+  .wine-prices__card--gold .wine-prices__button {
+    border-color: #76c7e8;
+    background: #76c7e8;
+  }
+
   .wine-prices__button:hover {
-    background: #fff8ec;
-    color: #8d4248;
+    border-color: #ed683a;
+    background: #ed683a;
+    color: #fffaf4;
     transform: translateY(-2px);
-  }
-
-  .wine-prices__list li {
-    position: relative;
-    padding: 9px 0 9px 23px;
-    border-top: 1px solid rgba(99, 49, 37, .12);
-  }
-
-  .wine-prices__list li::before {
-    content: "";
-    position: absolute;
-    top: 17px;
-    left: 2px;
-    width: 9px;
-    height: 9px;
-    border: 1px solid #8d4248;
-    border-radius: 50%;
-    background: rgba(141, 66, 72, .12);
   }
 
   .wine-prices-modal {
@@ -485,10 +543,11 @@ style.
     display: grid;
     place-items: center;
     padding: 22px;
-    background: rgba(12, 7, 5, .72);
+    background: rgba(24, 24, 24, .72);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    backdrop-filter: blur(5px) grayscale(1);
     transition:
       opacity .22s ease,
       visibility .22s ease;
@@ -501,16 +560,15 @@ style.
   }
 
   .wine-prices-modal__dialog {
-    width: min(100%, 460px);
+    position: relative;
+    width: min(100%, 560px);
+    max-height: min(88vh, 760px);
+    overflow: auto;
     padding: 34px 32px 30px;
-    border: 1px solid rgba(255, 220, 170, .32);
-    border-radius: 8px;
     background:
-      linear-gradient(180deg, rgba(255, 250, 235, .98), rgba(238, 217, 190, .97)),
-      #f5ead9;
-    box-shadow:
-      inset 0 0 0 7px rgba(96, 44, 31, .06),
-      0 30px 70px rgba(0, 0, 0, .38);
+      radial-gradient(ellipse at 96% 12%, rgba(118, 199, 232, .86), transparent 25%),
+      linear-gradient(180deg, #fffaf4, #f0eee8);
+    box-shadow: 0 34px 84px rgba(0, 0, 0, .34);
     transform: translateY(14px) scale(.98);
     transition: transform .22s ease;
   }
@@ -519,92 +577,126 @@ style.
     transform: translateY(0) scale(1);
   }
 
+  .wine-prices-modal__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid rgba(24, 24, 24, .18);
+    border-radius: 50%;
+    background: #76c7e8;
+    color: #181818;
+    font-family: inherit;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
   .wine-prices-modal__eyebrow {
-    display: block;
-    margin-bottom: 12px;
-    color: #8d4248;
-    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: #181818;
     font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: .14em;
+    font-weight: 900;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
+  .wine-prices-modal__eyebrow::before {
+    width: 36px;
+    height: 6px;
+    border-radius: 999px;
+    content: "";
+    background: #ed683a;
+  }
+
   .wine-prices-modal__title {
-    margin: 0 0 16px;
-    color: #2d150f;
-    font-size: clamp(2.1rem, 6vw, 3.1rem);
-    font-weight: 400;
-    line-height: .98;
+    margin: 0 0 18px;
+    color: #181818;
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    font-weight: 900;
+    line-height: .86;
+    text-transform: uppercase;
   }
 
   .wine-prices-modal__program {
-    margin: 0;
-    color: #44251d;
-    font-family: Arial, sans-serif;
-    font-size: .96rem;
-    line-height: 1.65;
-  }
-
-  .wine-prices-modal__program h4 {
-    margin: 0 0 14px;
-    color: #8d4248;
-    font-size: 1rem;
+    color: #242424;
+    font-size: .92rem;
     font-weight: 800;
+    line-height: 1.5;
+    text-transform: uppercase;
   }
 
   .wine-prices-modal__program p {
     margin: 0 0 12px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid rgba(24, 24, 24, .12);
   }
 
   .wine-prices-modal__program strong {
-    color: #2d150f;
-    font-weight: 800;
+    color: #ed683a;
+    font-weight: 900;
   }
 
   @media (max-width: 991.98px) {
-    .wine-prices__board {
-      padding: 24px;
+    .wine-prices__intro {
+      grid-template-columns: 1fr;
     }
 
-    .wine-prices__rail {
-      display: none;
+    .wine-prices__summary {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .wine-prices__card {
+    .wine-prices__cards {
+      grid-template-columns: 1fr;
+    }
+
+    .wine-prices__card,
+    .wine-prices__card--gold,
+    .wine-prices__card--platinum {
       min-height: auto;
+      margin-top: 0;
     }
 
     .wine-prices__decor-side {
       right: 10px;
-      font-size: .7rem;
-      letter-spacing: .22em;
+      font-size: .68rem;
+      letter-spacing: .16em;
     }
   }
 
   @media (max-width: 575.98px) {
+    .wine-prices {
+      padding: 42px 0 56px;
+    }
+
+    .wine-prices__container {
+      width: min(calc(100% - 34px), 1120px);
+    }
+
     .wine-prices__title {
-      font-size: 2.7rem;
+      font-size: clamp(2.6rem, 14vw, 4.1rem);
     }
 
-    .wine-prices__board {
-      padding: 18px;
-      border-radius: 8px;
+    .wine-prices__summary {
+      grid-template-columns: 1fr;
     }
 
-    .wine-prices__board::after {
-      inset: 10px;
+    .wine-prices__board-head {
+      grid-template-columns: 1fr;
     }
 
     .wine-prices__card {
-      padding: 24px 20px 22px;
-    }
-
-    .wine-prices-modal__dialog {
-      padding: 28px 24px 26px;
+      padding: 22px 20px;
     }
 
     .wine-prices__decor {
+      top: 20px;
       font-size: 4rem;
     }
 
@@ -612,10 +704,17 @@ style.
       display: none;
     }
 
-    .wine-prices__mark {
-      right: 12px;
-      top: 56px;
-      font-size: 3.8rem;
+    .wine-prices-modal__dialog {
+      padding: 30px 22px 24px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wine-prices__card,
+    .wine-prices__button,
+    .wine-prices-modal,
+    .wine-prices-modal__dialog {
+      transition: none;
     }
   }
 
@@ -623,14 +722,133 @@ script.
   (() => {
     const modal = document.querySelector('[data-price-modal]');
     const packageLabel = document.querySelector('[data-price-modal-package]');
+    const programContainer = document.querySelector('[data-price-modal-program]');
     const buttons = document.querySelectorAll('[data-price-modal-open]');
+    const closeButton = document.querySelector('[data-price-modal-close]');
 
-    if (!modal || !packageLabel || !buttons.length) {
+    const programs = {
+      Silver: [
+        {
+          time: '30 минут',
+          title: 'сбор гостей и начало вечеринки',
+          text: 'гостей встречает ведущий / велкам активность от ведущего',
+        },
+        {
+          time: '5 минут',
+          title: 'открытие мероприятия',
+          text: 'речь руководства / официальная часть',
+        },
+        {
+          time: '30 минут',
+          title: 'интерактив',
+          text: 'на выбор: квиз, 100 к 1, бинго',
+        },
+        {
+          time: '60 минут',
+          title: 'музыкальная интуиция, интерактив «Допой песню»',
+          text: 'деление на команды, музыканты поют куплеты известных песен, команды подпевают хором припевы',
+        },
+        {
+          time: '10 минут',
+          title: 'танцевальный перерыв',
+        },
+        {
+          time: '40 минут',
+          title: 'танцевальный интерактив с гостями',
+          text: 'все подпевают, танцуют',
+        },
+      ],
+      Gold: [
+        {
+          time: '30 минут',
+          title: 'сбор гостей и начало вечеринки',
+          text: 'гостей встречает ведущий / велкам активность от ведущего. Можно добавить выступление пианиста с контрабасом как фоновую живую музыку',
+        },
+        {
+          time: '5 минут',
+          title: 'открытие мероприятия',
+          text: 'речь руководства / официальная часть',
+        },
+        {
+          time: '40 минут',
+          title: 'музыкальная интуиция, интерактив «Допой песню»',
+          text: 'деление на команды, музыканты поют куплеты известных песен, команды подпевают хором припевы',
+        },
+        {
+          time: '10 минут',
+          title: 'танцевальный перерыв',
+        },
+        {
+          time: '30 минут',
+          title: 'выступление кавер-группы',
+        },
+        {
+          time: '40 минут',
+          title: 'танцевальный интерактив с гостями',
+          text: 'все подпевают, танцуют',
+        },
+        {
+          time: '30 минут',
+          title: 'выступление кавер-группы',
+        },
+      ],
+      Platinum: [
+        {
+          time: '30 минут',
+          title: 'сбор гостей и начало вечеринки',
+          text: 'гостей встречает ведущий / велкам активность от ведущего. Можно добавить выступление пианиста с контрабасом как фоновую живую музыку',
+        },
+        {
+          time: '5 минут',
+          title: 'открытие мероприятия',
+          text: 'речь руководства / официальная часть',
+        },
+        {
+          time: '40 минут',
+          title: 'музыкальная интуиция, интерактив «Допой песню»',
+          text: 'деление на команды, музыканты поют куплеты известных песен, команды подпевают хором припевы',
+        },
+        {
+          time: '10 минут',
+          title: 'танцевальный перерыв',
+        },
+        {
+          time: '30 минут',
+          title: 'выступление кавер-группы',
+        },
+        {
+          time: '40 минут',
+          title: 'танцевальный интерактив с гостями',
+          text: 'все подпевают, танцуют',
+        },
+        {
+          time: '30 минут',
+          title: 'выступление кавер-группы',
+        },
+        {
+          time: '40 минут',
+          title: 'дискотека с DJ',
+        },
+      ],
+    };
+
+    if (!modal || !packageLabel || !programContainer || !buttons.length) {
       return;
     }
 
+    const renderProgram = (packageName) => {
+      const program = programs[packageName] || programs.Silver;
+      programContainer.innerHTML = program.map((item, index) => {
+        const className = index === program.length - 1 ? ' class="mb-0"' : '';
+        const text = item.text ? `<br>${item.text}` : '';
+
+        return `<p${className}><strong>${item.time}</strong> - ${item.title}${text}</p>`;
+      }).join('');
+    };
+
     const openModal = (packageName) => {
       packageLabel.textContent = `Пакет ${packageName}`;
+      renderProgram(packageName);
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -648,8 +866,16 @@ script.
       });
     });
 
+    closeButton?.addEventListener('click', closeModal);
+
     modal.addEventListener('click', (event) => {
       if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
         closeModal();
       }
     });
