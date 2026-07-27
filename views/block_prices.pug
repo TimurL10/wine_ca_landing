@@ -12,7 +12,7 @@ section#prices.wine-prices
       h2.wine-prices__title
         | Три сценария
         br
-        span винного вечера
+        span музыкальной вечеринки
 
       .row.g-3
         .col-md-6
@@ -42,8 +42,9 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li Артисты
-              li Декор площадки
+              li Ведущий
+              li Диджей
+              li Музыкальная программа и артисты
 
             button.wine-prices__button(
               type="button"
@@ -61,9 +62,10 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li Артисты
-              li Декор площадки
-              li Еда
+              li Ведущий
+              li Диджей
+              li Музыкальная программа и артисты
+              li Еда, напитки
               li Площадка
 
             button.wine-prices__button(
@@ -82,12 +84,13 @@ section#prices.wine-prices
             .wine-prices__divider
 
             ul.wine-prices__list
-              li Артисты
-              li Декор площадки
-              li Еда
+              li Ведущий
+              li Диджей
+              li Музыкальная программа и артисты
+              li Еда, напитки
               li Площадка
               li Фотограф
-              li Видеограф
+              li Видеоограф
 
             button.wine-prices__button(
               type="button"
@@ -265,31 +268,31 @@ style.
   .wine-prices__board {
     position: relative;
     padding: 30px;
-    border: 1px solid rgba(25, 13, 8, .78);
+    border: 1px solid rgba(125, 81, 50, .48);
     border-radius: 10px 8px 12px 9px;
     background:
-      radial-gradient(ellipse at 16% 10%, rgba(255, 213, 151, .18), transparent 22%),
-      radial-gradient(ellipse at 85% 84%, rgba(0, 0, 0, .25), transparent 32%),
+      radial-gradient(ellipse at 18% 16%, rgba(255, 246, 223, .38), transparent 22%),
+      radial-gradient(ellipse at 78% 82%, rgba(135, 88, 52, .18), transparent 32%),
       repeating-linear-gradient(
         7deg,
-        rgba(255, 181, 105, .08) 0,
-        rgba(255, 181, 105, .08) 1px,
-        rgba(42, 20, 12, .08) 1px,
-        rgba(42, 20, 12, .08) 8px
+        rgba(112, 70, 38, .08) 0,
+        rgba(112, 70, 38, .08) 1px,
+        rgba(255, 240, 210, .12) 1px,
+        rgba(255, 240, 210, .12) 8px
       ),
-      linear-gradient(135deg, #1b0d08 0%, #35180f 36%, #4b2517 64%, #20100a 100%);
+      linear-gradient(135deg, #d7a56e 0%, #c99155 34%, #e3bd86 62%, #b87840 100%);
     box-shadow:
-      0 34px 56px rgba(47, 27, 17, .32),
-      0 10px 0 #120805,
-      inset 0 2px 0 rgba(255, 215, 168, .12),
-      inset 0 -28px 36px rgba(0, 0, 0, .22);
+      0 34px 52px rgba(82, 54, 32, .22),
+      0 10px 0 #8d5a34,
+      inset 0 2px 0 rgba(255, 244, 220, .42),
+      inset 0 -24px 34px rgba(104, 62, 30, .16);
   }
 
   .wine-prices__board::after {
     content: "";
     position: absolute;
     inset: 14px;
-    border: 1px solid rgba(255, 210, 155, .14);
+    border: 1px solid rgba(255, 244, 220, .26);
     border-radius: 7px;
     pointer-events: none;
   }
@@ -300,8 +303,8 @@ style.
     display: flex;
     justify-content: space-between;
     margin-bottom: 18px;
-    border-bottom: 1px solid rgba(255, 210, 155, .16);
-    color: rgba(255, 244, 222, .52);
+    border-bottom: 1px solid rgba(82, 50, 28, .18);
+    color: rgba(72, 43, 22, .58);
     font-size: .68rem;
     letter-spacing: .24em;
     text-transform: uppercase;

@@ -12,66 +12,60 @@ section.music-party-about
     style="max-width:1100px; z-index:1;"
   )
     .music-party-panel
-      .row.g-0
-        // Описание
-        .col-lg-7
-          .music-party-description
-            span.music-party-eyebrow 02 / О формате
+      // Описание
+      .music-party-description
+        span.music-party-eyebrow 02 / О формате
 
-            h2.music-party-title
-              | Что такое
-              br
-              span Music Party?
+        h2.music-party-title
+          | Что такое
+          br
+          span Music Party?
 
-            p.music-party-text
-              | Music Party — это формат мероприятия, где гости объединяются
-              | в общем музыкальном настроении.
+        .music-party-text-grid
+          p.music-party-text
+            | Music Party — это формат мероприятия, где гости объединяются
+            | в общем музыкальном настроении.
 
-            p.music-party-text
-              | Это событие, в котором рождается атмосфера живого исполнения
-              | и единства. Гости становятся частью музыкального процесса
-              | и поют вместе с артистами.
+          p.music-party-text
+            | Это событие, в котором рождается атмосфера живого исполнения
+            | и единства. Гости становятся частью музыкального процесса
+            | и поют вместе с артистами.
 
-            p.music-party-text
-              | Слова песен выводятся на экран или оформляются в стильные
-              | песенники, чтобы каждый мог легко включиться в процесс —
-              | без стеснения и формальностей.
+          p.music-party-text
+            | Слова песен выводятся на экран или оформляются в стильные
+            | песенники, чтобы каждый мог легко включиться в процесс —
+            | без стеснения и формальностей.
 
-            p.music-party-text.mb-0
-              | Вечер, где музыка объединяет людей, создаёт ощущение единства
-              | и превращает гостей в участников одного общего музыкального момента.
+          p.music-party-text.mb-0
+            | Вечер, где музыка объединяет людей, создаёт ощущение единства
+            | и превращает гостей в участников одного общего музыкального момента.
 
-        // Шаги
-        .col-lg-5
-          .music-party-steps
-            span.music-party-eyebrow 03 / Как проходит вечер
+      // Шаги
+      .music-party-steps
+        span.music-party-eyebrow 03 / Как проходит вечер
 
-            h2.music-party-steps-title 4 простых шага
+        h2.music-party-steps-title 4 простых шага
 
-            .row.g-2
-              .col-6
-                .music-party-step
-                  span.music-party-step-number 01
-                  h3 Выбираем формат
-                  p Подбираем программу и музыкальное настроение.
+        .music-party-steps-grid
+          .music-party-step
+            span.music-party-step-number 01
+            h3 Выбираем формат
+            p Подбираем программу и музыкальное настроение.
 
-              .col-6
-                .music-party-step
-                  span.music-party-step-number 02
-                  h3 Добавляем опции
-                  p Выбираем артистов, ведущего и оборудование.
+          .music-party-step
+            span.music-party-step-number 02
+            h3 Добавляем опции
+            p Выбираем артистов, ведущего и оборудование.
 
-              .col-6
-                .music-party-step
-                  span.music-party-step-number 03
-                  h3 Выбираем площадку
-                  p Подбираем уютный лофт или музыкальную студию.
+          .music-party-step
+            span.music-party-step-number 03
+            h3 Выбираем площадку
+            p Подбираем уютный лофт или музыкальную студию.
 
-              .col-6
-                .music-party-step
-                  span.music-party-step-number 04
-                  h3 Поём вместе
-                  p Создаём один общий живой музыкальный момент.
+          .music-party-step
+            span.music-party-step-number 04
+            h3 Поём вместе
+            p Создаём один общий живой музыкальный момент.
 
 style.
   .music-party-about {
@@ -170,96 +164,39 @@ style.
 
   .music-party-panel {
     position: relative;
-    overflow: visible;
-    border: 1px solid rgba(111, 65, 35, .56);
-    border-radius: 10px 8px 12px 9px;
-    background:
-      radial-gradient(ellipse at 20% 16%, rgba(255, 238, 201, .3), transparent 20%),
-      radial-gradient(ellipse at 75% 78%, rgba(95, 49, 20, .22), transparent 30%),
-      repeating-linear-gradient(
-        92deg,
-        rgba(79, 42, 22, .07) 0,
-        rgba(79, 42, 22, .07) 2px,
-        transparent 2px,
-        transparent 18px
-      ),
-      repeating-linear-gradient(
-        6deg,
-        rgba(77, 39, 17, .1) 0,
-        rgba(77, 39, 17, .1) 1px,
-        rgba(255, 222, 171, .1) 1px,
-        rgba(255, 222, 171, .1) 7px
-      ),
-      linear-gradient(
-        135deg,
-        #bf7f45 0%,
-        #a76534 32%,
-        #d19a61 58%,
-        #96562b 100%
-      );
+    overflow: hidden;
+    border: 1px solid rgba(141, 66, 72, .18);
+    border-radius: 12px;
+    background: #f4d0d9;
     box-shadow:
-      0 36px 56px rgba(72, 43, 22, .28),
-      0 12px 0 #72401f,
-      0 18px 24px rgba(72, 43, 22, .18),
-      inset 0 2px 0 rgba(255, 230, 188, .32),
-      inset 0 -28px 36px rgba(79, 39, 15, .2),
-      inset 18px 0 28px rgba(88, 43, 16, .12);
-    transform: rotate(-1.2deg);
-    transform-origin: 52% 8%;
+      0 26px 50px rgba(92, 53, 58, .18),
+      inset 0 1px 0 rgba(255, 255, 255, .48);
   }
 
   .music-party-panel::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: -38px;
-    left: 50%;
-    width: 76%;
-    height: 58px;
-    border-top: 3px solid rgba(105, 60, 30, .5);
-    border-radius: 50% 50% 0 0;
-    background:
-      radial-gradient(circle at left bottom, #86522d 0 7px, transparent 8px),
-      radial-gradient(circle at right bottom, #86522d 0 7px, transparent 8px),
-      linear-gradient(rgba(151, 91, 48, .86), rgba(151, 91, 48, .86));
-    background-repeat: no-repeat;
-    background-size: 18px 18px, 18px 18px, calc(100% - 28px) 3px;
-    background-position: left 0 bottom 1px, right 0 bottom 1px, center top 12px;
-    transform: translateX(-50%);
-    pointer-events: none;
+    display: none;
   }
 
   .music-party-panel::after {
     content: "";
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     inset: 14px;
-    border: 1px solid rgba(255, 229, 188, .2);
-    border-radius: 7px;
-    background:
-      radial-gradient(circle at 18px 18px, rgba(95, 49, 20, .72) 0 5px, rgba(255, 217, 161, .42) 5.5px 7px, transparent 7.5px),
-      radial-gradient(circle at calc(100% - 18px) 18px, rgba(95, 49, 20, .72) 0 5px, rgba(255, 217, 161, .42) 5.5px 7px, transparent 7.5px),
-      radial-gradient(circle at 18px calc(100% - 18px), rgba(95, 49, 20, .72) 0 5px, rgba(255, 217, 161, .42) 5.5px 7px, transparent 7.5px),
-      radial-gradient(circle at calc(100% - 18px) calc(100% - 18px), rgba(95, 49, 20, .72) 0 5px, rgba(255, 217, 161, .42) 5.5px 7px, transparent 7.5px);
+    border: 1px solid rgba(141, 66, 72, .16);
+    border-radius: 8px;
     pointer-events: none;
   }
 
-  .music-party-panel .row {
+  .music-party-description {
     position: relative;
     z-index: 2;
-    overflow: hidden;
-    border-radius: inherit;
-  }
-
-  .music-party-description {
-    height: 100%;
-    padding: 42px;
+    padding: 42px 46px 34px;
   }
 
   .music-party-eyebrow {
     display: block;
     margin-bottom: 12px;
-    color: #e2a077;
+    color: #8d4248;
     font-size: .72rem;
     font-style: italic;
     letter-spacing: .13em;
@@ -267,82 +204,89 @@ style.
   }
 
   .music-party-title {
+    max-width: 620px;
     margin-bottom: 25px;
-    color: #fff4de;
+    color: #2d150f;
     font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 400;
     line-height: .95;
   }
 
   .music-party-title span {
-    color: #ffc38f;
+    color: #8d4248;
     font-style: italic;
   }
 
   .music-party-text {
-    max-width: 650px;
-    margin-bottom: 13px;
-    color: #ead7c1;
+    margin: 0;
+    color: #4a2b22;
     font-family: Arial, sans-serif;
     font-size: .95rem;
     line-height: 1.65;
   }
 
+  .music-party-text-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 28px;
+    max-width: 900px;
+  }
+
   .music-party-steps {
-    height: 100%;
-    padding: 42px 30px;
-    border-left: 1px solid rgba(255, 210, 155, .14);
-    background:
-      linear-gradient(90deg, rgba(0, 0, 0, .2), transparent 32%),
-      rgba(0, 0, 0, .12);
+    position: relative;
+    z-index: 2;
+    padding: 30px 46px 42px;
+    border-top: 1px solid rgba(141, 66, 72, .16);
+    background: rgba(255, 255, 255, .18);
   }
 
   .music-party-steps-title {
     margin-bottom: 20px;
-    color: #fff4de;
+    color: #2d150f;
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     font-weight: 400;
   }
 
-  .music-party-steps .col-6 {
+  .music-party-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .music-party-step {
     transition: transform .25s ease;
   }
 
-  .music-party-steps .col-6:hover {
+  .music-party-step:hover {
     transform: translateY(-6px);
   }
 
   .music-party-step {
-    height: 100%;
-    min-height: 145px;
+    min-height: 138px;
     padding: 16px;
-    border: 1px solid rgba(255, 220, 170, .14);
+    border: 1px solid rgba(141, 66, 72, .16);
     border-radius: 4px 7px 5px 6px;
-    background:
-      linear-gradient(135deg, rgba(255, 216, 166, .08), rgba(0, 0, 0, .08)),
-      rgba(255, 255, 255, .035);
+    background: rgba(255, 248, 252, .42);
     transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
   }
 
-  .music-party-steps .col-6:hover .music-party-step {
-    border-color: rgba(255, 216, 166, .28);
-    background:
-      linear-gradient(135deg, rgba(255, 216, 166, .12), rgba(0, 0, 0, .04)),
-      rgba(255, 255, 255, .055);
-    box-shadow: 0 12px 26px rgba(0, 0, 0, .2);
+  .music-party-step:hover {
+    border-color: rgba(141, 66, 72, .32);
+    background: rgba(255, 248, 252, .66);
+    box-shadow: 0 12px 26px rgba(92, 53, 58, .14);
   }
 
   .music-party-step-number {
     display: block;
     margin-bottom: 8px;
-    color: #ffc38f;
+    color: #8d4248;
     font-size: 1.45rem;
     font-style: italic;
   }
 
   .music-party-step h3 {
     margin-bottom: 7px;
-    color: #fff4de;
+    color: #2d150f;
     font-family: Arial, sans-serif;
     font-size: .9rem;
     font-weight: 700;
@@ -350,7 +294,7 @@ style.
 
   .music-party-step p {
     margin: 0;
-    color: #d8c2ad;
+    color: #5a3a32;
     font-family: Arial, sans-serif;
     font-size: .76rem;
     line-height: 1.45;
@@ -362,9 +306,9 @@ style.
       padding: 28px;
     }
 
-    .music-party-steps {
-      border-top: 1px solid rgba(255, 210, 155, .14);
-      border-left: 0;
+    .music-party-text-grid,
+    .music-party-steps-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .music-party-about__decor {
@@ -396,7 +340,6 @@ style.
   @media (max-width: 575.98px) {
     .music-party-panel {
       border-radius: 8px;
-      transform: rotate(-.7deg);
     }
 
     .music-party-panel::before {
@@ -412,6 +355,11 @@ style.
     .music-party-description,
     .music-party-steps {
       padding: 22px;
+    }
+
+    .music-party-text-grid,
+    .music-party-steps-grid {
+      grid-template-columns: 1fr;
     }
 
     .music-party-title {

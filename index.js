@@ -39,7 +39,13 @@ try {
     console.log('images route filePath', filePath, fs.existsSync(filePath))
     if (fs.existsSync(filePath)) {
       const ext = path.extname(filePath).toLowerCase()
-      const type = ext === '.svg' ? 'image/svg+xml' : 'application/octet-stream'
+      const types = {
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.png': 'image/png',
+        '.svg': 'image/svg+xml',
+      }
+      const type = types[ext] || 'application/octet-stream'
       reply.type(type).send(fs.readFileSync(filePath))
       return
     }
