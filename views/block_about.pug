@@ -52,13 +52,17 @@ section.music-party-about
       .music-party-steps-grid
         .music-party-step
           span.music-party-step-number 01
-          h3 Выбираем формат
+          h3 Выбираем пакет
           p Подбираем программу и музыкальное настроение.
 
         .music-party-step
           span.music-party-step-number 02
           h3 Добавляем опции
-          p Выбираем артистов, ведущего и оборудование.
+          p На выбор
+          ul.music-party-step-options
+            li Коктейльный бар
+            li Игры
+            li Фотозона
 
         .music-party-step
           span.music-party-step-number 03
@@ -404,6 +408,21 @@ style.
     font-size: .74rem;
     font-weight: 800;
     line-height: 1.38;
+    text-transform: uppercase;
+  }
+
+  .music-party-step-options {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 4px;
+    margin: 8px 0 0;
+    padding: 0;
+    color: #242424;
+    font-size: .74rem;
+    font-weight: 900;
+    line-height: 1.24;
+    list-style: none;
     text-transform: uppercase;
   }
 

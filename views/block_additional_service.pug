@@ -22,7 +22,7 @@ section#services.addon-services
         span.addon-services__tag visual accent
 
         h3
-          | Фотозона
+          | Фотобудка
           span из пайеток
 
         p Стильное решение и яркий акцент для любой вечеринки.
@@ -324,19 +324,24 @@ style.
 
   .addon-services__list {
     display: grid;
+    counter-reset: addon-service;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
+    gap: 14px;
   }
 
   .addon-services__item {
+    counter-increment: addon-service;
+    position: relative;
     display: flex;
     min-height: 132px;
     flex-direction: column;
     justify-content: space-between;
-    padding: 18px;
-    border: 1px solid rgba(24, 24, 24, .1);
-    background: rgba(255, 255, 255, .38);
-    box-shadow: 0 18px 42px rgba(24, 24, 24, .06);
+    overflow: hidden;
+    padding: 22px 20px 20px;
+    border: 1px solid rgba(24, 24, 24, .16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 250, 244, .78));
+    box-shadow: 0 22px 52px rgba(24, 24, 24, .12);
     backdrop-filter: blur(12px);
     transition:
       background-color .2s ease,
@@ -344,25 +349,74 @@ style.
       box-shadow .2s ease;
   }
 
+  .addon-services__item::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 7px;
+    content: "";
+    background: #76c7e8;
+  }
+
+  .addon-services__item::after {
+    position: absolute;
+    right: 14px;
+    bottom: 10px;
+    content: counter(addon-service, decimal-leading-zero);
+    color: rgba(118, 199, 232, .18);
+    font-size: 3.6rem;
+    font-weight: 900;
+    line-height: .8;
+    pointer-events: none;
+  }
+
+  .addon-services__item:nth-child(2n)::before {
+    background: #f2a9c7;
+  }
+
+  .addon-services__item:nth-child(3n)::before {
+    background: #ed683a;
+  }
+
   .addon-services__item:hover {
-    background: rgba(255, 250, 244, .72);
-    box-shadow: 0 24px 54px rgba(24, 24, 24, .1);
-    transform: translateY(-4px);
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 30px 68px rgba(24, 24, 24, .18);
+    transform: translateY(-6px);
   }
 
   .addon-services__item span {
+    position: relative;
+    z-index: 1;
     color: #181818;
-    font-size: .9rem;
+    max-width: 88%;
+    font-size: .98rem;
     font-weight: 900;
     line-height: 1.25;
     text-transform: uppercase;
   }
 
   .addon-services__item strong {
-    color: #4aaed6;
-    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 22px;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: rgba(118, 199, 232, .18);
+    color: #181818;
+    font-size: 1.04rem;
     font-weight: 900;
     line-height: 1.25;
+  }
+
+  .addon-services__item:nth-child(2n) strong {
+    background: rgba(242, 169, 199, .22);
+  }
+
+  .addon-services__item:nth-child(3n) strong {
+    background: rgba(237, 104, 58, .18);
   }
 
   @media (max-width: 991.98px) {
